@@ -497,8 +497,7 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
-  - Bank A
-  - Bank B
+  - Test Bank
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
