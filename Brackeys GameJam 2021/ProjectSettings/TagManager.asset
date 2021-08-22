@@ -14,8 +14,8 @@ TagManager:
   - Character
   - Enemy
   - Background
-  - 
-  - 
+  - Ground
+  - Interactable
   - 
   - 
   - 

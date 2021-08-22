@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000023B6CA63E78 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000001DDDF847D08 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,82 +16,3 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] SystemI::createSound                     : filename = C:/Users/Eduardo/Documents/FMOD Studio/sample/Build\Desktop/Test Bank.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Affinity: 0x8000000000000003, Priority: 0xFFFF7FFC, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] SystemI::createSound                     : setdata soundi = 0000023ABB04B778 : node = 0000023AAEAD4400
-[LOG] SystemI::createSound                     : add node to async list : head = 0000023B3D40D708.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000023ABB04B778
-[LOG] SystemI::createSoundInternal             :     Create name='C:/Users/Eduardo/Documents/FMOD Studio/sample/Build\Desktop/Test Bank.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 740672
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2880
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000023AAEAD4510
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='BGM01hero', format=5, channels=2, frequency=48000, lengthbytes=732224, lengthpcm=2666164, pcmblocksize=0, loopstart=210465, loopend=2451072, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.988220.
-[LOG] Thread::initThread                       :     Init FMOD file thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFC, Stack Size: 49152, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000023ABB04B778
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000023AD8150728
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000023AD8150728
-[LOG] SystemI::createSound                     : filename = C:/Users/Eduardo/Documents/FMOD Studio/sample/Build\Desktop/Test Bank.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0000023B3D12CDF8 : node = 0000023AC53EE950
-[LOG] SystemI::createSound                     : add node to async list : head = 0000023B3D40D708.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000023B3D12CDF8
-[LOG] SystemI::createSoundInternal             :     Create name='C:/Users/Eduardo/Documents/FMOD Studio/sample/Build\Desktop/Test Bank.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 740672
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2880
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000023AC53EEA60
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='BGM01hero', format=5, channels=2, frequency=48000, lengthbytes=732224, lengthpcm=2666164, pcmblocksize=0, loopstart=210465, loopend=2451072, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.988220.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000023B3D12CDF8
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000023AD81503C8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000023AD81503C8
-[LOG] SystemI::createSound                     : filename = C:/Users/Eduardo/Documents/FMOD Studio/sample/Build\Desktop/Test Bank.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0000023B3D7F94F8 : node = 0000023AD7F3D090
-[LOG] SystemI::createSound                     : add node to async list : head = 0000023B3D40D708.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000023B3D7F94F8
-[LOG] SystemI::createSoundInternal             :     Create name='C:/Users/Eduardo/Documents/FMOD Studio/sample/Build\Desktop/Test Bank.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 740672
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2880
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000023AD7F3D1A0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='BGM01hero', format=5, channels=2, frequency=48000, lengthbytes=732224, lengthpcm=2666164, pcmblocksize=0, loopstart=210465, loopend=2451072, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.988220.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000023B3D7F94F8
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000023AD8150578
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000023AD8150578
-[LOG] SoundI::release                          : BGM01hero (0000023B3D7F94F8)
-[LOG] SoundI::release                          :     BGM01hero (0000023B3CD910D8)
-[LOG] SoundI::release                          :     BGM01hero (0000023AD8150578)
-[LOG] SoundI::release                          : BGM01hero (0000023B3D12CDF8)
-[LOG] SoundI::release                          :     BGM01hero (0000023B3CD92AD8)
-[LOG] SoundI::release                          :     BGM01hero (0000023AD81503C8)
-[LOG] SoundI::release                          : BGM01hero (0000023ABB04B778)
-[LOG] SoundI::release                          :     BGM01hero (0000023B3CD91758)
-[LOG] SoundI::release                          :     BGM01hero (0000023AD8150728)
-[LOG] SoundI::release                          :  (0000023AC2BF7938)
-[LOG] SoundI::release                          :     kick_hard_impact_01 (0000023ABA191688)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
