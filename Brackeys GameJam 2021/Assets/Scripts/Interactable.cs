@@ -6,6 +6,7 @@ using DG.Tweening;
 public class Interactable : MonoBehaviour
 {
     private Rigidbody2D rb2D;
+    public bool isDamaged;
 
     private void Start()
     {
@@ -21,5 +22,10 @@ public class Interactable : MonoBehaviour
 
         transform.DOLocalMove(posDelta * kbForce, 1f, false);
         
+    }
+
+    public void RepairObject()
+    {
+        Debug.Log("Employee is trying to repair object");
     }
 }

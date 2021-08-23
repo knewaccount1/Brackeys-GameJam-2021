@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
+    public List<Interactable> damagedInteractables;
+
+
     private void Update()
     {
         if (Input.GetKey(KeyCode.Alpha0))
@@ -13,5 +16,6 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(0);
         }
     }
+
 
 }
