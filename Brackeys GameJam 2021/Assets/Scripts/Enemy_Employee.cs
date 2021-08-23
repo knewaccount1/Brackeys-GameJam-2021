@@ -7,6 +7,7 @@ public class Enemy_Employee : EnemyAI
     [Header ("Employee Specfic Attributes")]
 
     public float searchDistance = 15f;
+    public float slowTime;
     public LayerMask interactableLayer;
     public Interactable interactableToRepair;
     Collider2D[] hit2D;
@@ -75,7 +76,7 @@ public class Enemy_Employee : EnemyAI
         AStarPathFinding();
 
         float distanceDelta = Vector3.Distance(transform.position, target.transform.position);
-        Debug.Log(distanceDelta);
+ 
         if (distanceDelta > chaseDistance)
         {
             if (timeBeforeIdleCountdown <= 0)
@@ -97,6 +98,27 @@ public class Enemy_Employee : EnemyAI
         }
 
     }
+
+    public override void Attacking()
+    {
+        timeBtwAttacks -= Time.deltaTime;
+
+        if (timeBtwAttacks <= 0 && !isAttacking)
+        {
+            
+            StartCoroutine(Attack());
+        }
+    }
+
+    //Employee slows players
+    IEnumerator Attack()
+    {
+        
+
+
+        yield return new WaitForEndOfFrame();
+    }
+
 
     public override void UniqueChase()
     {
@@ -148,6 +170,15 @@ public class Enemy_Employee : EnemyAI
         public int Compare(object x, object y)
         {
             throw new System.NotImplementedException();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            
+            collision.GetComponentInParent<Movement>().SlowEffect(slowTime);
         }
     }
 }

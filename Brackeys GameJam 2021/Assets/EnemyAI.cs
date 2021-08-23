@@ -6,12 +6,13 @@ using Pathfinding;
 
 public class EnemyAI : MonoBehaviour
 {
+    [Header ("References")]
     public GameManager GM;
-
     public Transform target;
     public Transform playerRef;
     public Transform enemyGFX;
 
+    [Header("Editable Attributes")]
     public float speed = 200f;
     public float nextWaypointDistance = 3;
 
@@ -25,21 +26,24 @@ public class EnemyAI : MonoBehaviour
     public int health = 3;
     public int maxHealth = 3;
     public string enemyName;
-    public float aggroDistance = 5;
-    public float chaseDistance = 8;
-    public float reactionTime = .5f;
-    public float timeBeforeIdle = 2.5f;
-    public float reactionTimeCountdown;
-    public float timeBeforeIdleCountdown;
-    public bool hasSpottedPlayer = false;
+    public float aggroDistance = 5; //Distance which the an idle unit becomes aggro
+    public float chaseDistance = 8; // Distance which an aggro'd unit will continue to chase player
+    public float reactionTime = .5f; //Time between idle and aggro
+    public float attackSpeed = 2f; //time between attacks;
+    public float timeBeforeIdle = 2.5f; // Time an aggro'd enemy will chase a player that is out of chaseDistance
 
-    public float attackRange;
+    [HideInInspector] public float reactionTimeCountdown; //An internal countdown for reaction time
+    [HideInInspector] public float timeBeforeIdleCountdown; //an internal countdown for idletime
+    [HideInInspector] public float timeBtwAttacks;
 
-    public float moveSpeedX = 4;
-    public float moveSpeedZ = 3;
+    public bool hasSpottedPlayer = false; 
+
+    public float attackRange; //Range which a unit will interact with player when aggro'd
+
     public bool facingRight = false;
 
     public bool isDying;
+    public bool isAttacking;
 
     public bool enableChase;
 
@@ -80,6 +84,7 @@ public class EnemyAI : MonoBehaviour
     {
         reactionTimeCountdown = reactionTime;
         timeBeforeIdleCountdown = timeBeforeIdle;
+        timeBtwAttacks = attackSpeed;
 
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();

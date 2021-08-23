@@ -9,10 +9,14 @@ public class Movement : MonoBehaviour
     [Header ("Tuning Parameters")]
     public float hSpeed = 10f;
     public float vSpeed = 0;
+    private float originalHSpeed;
+    private float originalVSpeed;
     public float jumpForce = 5f;
     public float kbForce = 5f;
     public float tackleDistance = 1f;
     [SerializeField] private LayerMask tackleLayerMask;
+
+    [Header("Debugging Parameters")]
     //[Range(0, 1.0f)] [SerializeField] float movementSmothing;
     [SerializeField] private bool canMove = true;
     [SerializeField] private bool facingRight = true;
@@ -153,5 +157,26 @@ public class Movement : MonoBehaviour
         Gizmos.color = Color.red;
         Vector3 direction = transform.TransformDirection(Vector2.right) * tackleDistance;
         Gizmos.DrawRay(transform.position, direction);
+    }
+
+    public void SlowEffect(float slowTimer)
+    {
+        StartCoroutine(SlowEffectCoroutine(slowTimer));
+    }
+    IEnumerator SlowEffectCoroutine(float slowTimer)
+    {
+        Debug.Log("collided with player");
+
+        hSpeed = hSpeed / 3;
+        vSpeed = vSpeed / 3;
+        yield return new WaitForSeconds(slowTimer);
+
+        hSpeed = hSpeed * 3;
+        vSpeed = vSpeed * 3;
+    }
+
+    public void StunEffect()
+    {
+
     }
 }
