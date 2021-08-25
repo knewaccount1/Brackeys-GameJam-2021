@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Enemy_Aggressive : EnemyAI
 {
-
+    [Header("Aggressive Unit Specific Parameters")]
+    public float stunDuration;
 
     public override void Idle()
     {
@@ -67,6 +68,14 @@ public class Enemy_Aggressive : EnemyAI
             timeBeforeIdleCountdown = timeBeforeIdle;
         }
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<Movement>().StunEffect(stunDuration);
+        }
     }
 
 }

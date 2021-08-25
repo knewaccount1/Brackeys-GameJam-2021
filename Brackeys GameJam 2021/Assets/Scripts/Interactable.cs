@@ -5,11 +5,16 @@ using DG.Tweening;
 
 public class Interactable : MonoBehaviour
 {
+    private GameManager GM;
     private Rigidbody2D rb2D;
     public bool isDamaged;
 
+    public AudioClip destroyAudio;
+    
+
     private void Start()
     {
+        GM = FindObjectOfType<GameManager>();
         rb2D = GetComponent<Rigidbody2D>();
     }
 
@@ -27,5 +32,13 @@ public class Interactable : MonoBehaviour
     public void RepairObject()
     {
         Debug.Log("Employee is trying to repair object");
+        GM.destroyedInteractables--;
+    }
+
+    public void DestroyInteractable()
+    {
+
+        GM.destroyedInteractables++;
+       
     }
 }
