@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
     private float originalVSpeed;
     public float jumpForce = 5f;
     public float kbForce = 5f;
+    
     public float tackleDistance = 1f;
     [SerializeField] private LayerMask tackleLayerMask;
 
@@ -21,8 +22,10 @@ public class Movement : MonoBehaviour
     [SerializeField] private bool canMove = true;
     [SerializeField] private bool facingRight = true;
     [SerializeField] private bool isGrounded = true;
-    float horizontalMove;
-    float verticalMove;
+    [SerializeField] public bool isTackling = false;
+    
+    private float horizontalMove;
+    private float verticalMove;
 
 
 
@@ -42,7 +45,6 @@ public class Movement : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         sr = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponent<Animator>();
-
     }
 
     // Update is called once per frame
@@ -58,18 +60,26 @@ public class Movement : MonoBehaviour
         //    //rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         //}
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PlayerTackle();
+        }
 
         //Handle Animations
         if (IsGrounded())
         {
-            if (rb2D.velocity.x == 0)
+            if (!isTackling)
             {
-                animator.Play("isIdle");
+                if (rb2D.velocity.x == 0)
+                {
+                    animator.Play("isIdle");
+                }
+                else
+                {
+                    animator.Play("isRunning");
+                }
             }
-            else
-            {
-                animator.Play("isRunning");
-            }
+            
         }
         else
         {
@@ -82,6 +92,13 @@ public class Movement : MonoBehaviour
             //Hit();
 
         }
+    }
+
+    private void PlayerTackle()
+    {
+        isTackling = true;
+        animator.Play("Tackle");
+
     }
 
     private void Hit()
@@ -101,7 +118,10 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move(horizontalMove, verticalMove, false);
+        if (!isTackling)
+        {
+            Move(horizontalMove, verticalMove, false);
+        }
     }
 
     private bool IsGrounded()
