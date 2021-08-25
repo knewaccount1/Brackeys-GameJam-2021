@@ -175,8 +175,23 @@ public class Movement : MonoBehaviour
         vSpeed = vSpeed * 3;
     }
 
-    public void StunEffect()
+    public void StunEffect(float stunTime)
     {
+
+        StartCoroutine(StunEffectCoroutine(stunTime));
+    }
+
+    IEnumerator StunEffectCoroutine(float stunTime)
+    {
+
+        originalHSpeed = hSpeed;
+        originalVSpeed = vSpeed;
+        hSpeed = 0;
+        vSpeed = 0;
+        
+        yield return new WaitForSeconds(stunTime);
+        hSpeed = originalHSpeed;
+        vSpeed = originalVSpeed;
 
     }
 }

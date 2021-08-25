@@ -1087,6 +1087,7 @@ MonoBehaviour:
   animator: {fileID: 587153904}
   triggerCollider: {fileID: 0}
   currentState: 0
+  stunDuration: 0
 --- !u!114 &587153901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1661,7 +1662,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77161e4ae910c364fba8d9375edc5392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagedInteractables: []
+  allInteractables: []
+  interactablesToWin: 5
+  score: 0
+  destroyedInteractables: 0
 --- !u!4 &894177890
 Transform:
   m_ObjectHideFlags: 0
@@ -2262,6 +2266,7 @@ MonoBehaviour:
   animator: {fileID: 1445818179}
   triggerCollider: {fileID: 0}
   currentState: 0
+  stunDuration: 0
 --- !u!50 &1445818181
 Rigidbody2D:
   serializedVersion: 4

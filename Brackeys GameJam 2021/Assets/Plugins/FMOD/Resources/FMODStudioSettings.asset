@@ -470,10 +470,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   SwitchSettingsMigration: 1
-  HasSourceProject: 1
-  HasPlatforms: 1
-  sourceProjectPath: C:/Users/Eduardo/Documents/FMOD Studio/sample/sample.fspro
-  sourceBankPath: C:/Users/Eduardo/Documents/FMOD Studio/sample/Build
+  HasSourceProject: 0
+  HasPlatforms: 0
+  sourceProjectPath: Assets/Sounds/FMOD Bank/sample.fspro
+  sourceBankPath: Assets/Sounds/FMOD Bank/Test Bank
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -497,7 +497,8 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
-  - Test Bank
+  - Music
+  - SFX
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
