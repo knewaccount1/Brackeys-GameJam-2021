@@ -19,7 +19,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-6821173884687829829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -2041713078098004685}
+  - {fileID: 2572985779321231474}
   MinDistance: 0
   MaxDistance: 0
   Length: 103758
@@ -133,7 +133,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1205305644880981599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 5568039803498498309}
+  - {fileID: 22971998669314298}
   MinDistance: 0
   MaxDistance: 0
   Length: 150204
@@ -217,7 +217,7 @@ MonoBehaviour:
   Path: Assets/Sounds/FMOD Bank/Test Bank/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637639893240000000
+  lastModified: 637654814538765288
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -250,8 +250,28 @@ MonoBehaviour:
   - {fileID: -448154312201553411}
   StringsBanks:
   - {fileID: 8260787659463128540}
-  stringsBankWriteTime: 637639893240000000
+  stringsBankWriteTime: 637654814538785224
   cacheVersion: 6
+--- !u!114 &22971998669314298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM2/Combat
+  m_EditorClassIdentifier: 
+  Name: Combat
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &1141068778893987564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +335,26 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1012
   Exists: 1
+--- !u!114 &2572985779321231474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM1/Combat
+  m_EditorClassIdentifier: 
+  Name: Combat
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &4184758029415189698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,7 +370,7 @@ MonoBehaviour:
   Path: Assets/Sounds/FMOD Bank/Test Bank/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637639893240000000
+  lastModified: 637654814539723363
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -345,6 +385,26 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/BGM2/Combat
+  m_EditorClassIdentifier: 
+  Name: Combat
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &7660788747877149382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM3/Combat
   m_EditorClassIdentifier: 
   Name: Combat
   Min: 0
@@ -395,7 +455,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -7754579144744310607}
+  - {fileID: 7660788747877149382}
   MinDistance: 0
   MaxDistance: 0
   Length: 133407
@@ -437,7 +497,7 @@ MonoBehaviour:
   Path: Assets/Sounds/FMOD Bank/Test Bank/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637639893240000000
+  lastModified: 637654814538785224
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -458,7 +518,7 @@ MonoBehaviour:
   Path: Assets/Sounds/FMOD Bank/Test Bank/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637639893240000000
+  lastModified: 637654814539622933
   LoadResult: 0
   FileSizes: []
   Exists: 1
