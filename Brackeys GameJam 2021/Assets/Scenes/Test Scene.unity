@@ -838,7 +838,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hSpeed: 10
   vSpeed: 10
-  jumpForce: 5
   kbForce: 5
   tackleDistance: 1
   tackleLayerMask:
@@ -848,6 +847,8 @@ MonoBehaviour:
   facingRight: 0
   isGrounded: 1
   isTackling: 0
+  timeBtwStun: 0
+  isStunned: 0
   groundCollider: {fileID: 450557638}
   groundLayerMask:
     serializedVersion: 2
@@ -1094,7 +1095,7 @@ MonoBehaviour:
   animator: {fileID: 587153904}
   triggerCollider: {fileID: 0}
   currentState: 0
-  stunDuration: 0
+  stunDuration: 1
 --- !u!114 &587153901
 MonoBehaviour:
   m_ObjectHideFlags: 0
