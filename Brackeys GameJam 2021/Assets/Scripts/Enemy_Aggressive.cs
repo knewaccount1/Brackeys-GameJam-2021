@@ -70,11 +70,12 @@ public class Enemy_Aggressive : EnemyAI
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    public override void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<Movement>().StunEffect(stunDuration);
+            collision.GetComponentInParent<Movement>().StunEffect(stunDuration);
         }
     }
 
