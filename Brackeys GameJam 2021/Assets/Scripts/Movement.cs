@@ -9,9 +9,8 @@ public class Movement : MonoBehaviour
     [Header ("Tuning Parameters")]
     public float hSpeed = 10f;
     public float vSpeed = 0;
-    private float originalHSpeed;
-    private float originalVSpeed;
-    public float jumpForce = 5f;
+
+    
     public float kbForce = 5f;
     
     public float tackleDistance = 1f;
@@ -23,12 +22,10 @@ public class Movement : MonoBehaviour
     [SerializeField] private bool facingRight = true;
     [SerializeField] private bool isGrounded = true;
     [SerializeField] public bool isTackling = false;
-    
+    [SerializeField] private float timeBtwStun;
+    [SerializeField] private bool isStunned;
     private float horizontalMove;
     private float verticalMove;
-
-
-
 
     //References
     [Header("References")]
@@ -197,21 +194,26 @@ public class Movement : MonoBehaviour
 
     public void StunEffect(float stunTime)
     {
-
-        StartCoroutine(StunEffectCoroutine(stunTime));
+        if(!isStunned)
+            StartCoroutine(StunEffectCoroutine(stunTime));
     }
 
     IEnumerator StunEffectCoroutine(float stunTime)
     {
+        isStunned = true;
 
-        originalHSpeed = hSpeed;
-        originalVSpeed = vSpeed;
+        float originalHSpeed = hSpeed;
+        float originalVSpeed = vSpeed;
         hSpeed = 0;
         vSpeed = 0;
         
         yield return new WaitForSeconds(stunTime);
+
         hSpeed = originalHSpeed;
         vSpeed = originalVSpeed;
+
+        yield return new WaitForSeconds(.5f);
+        isStunned = false;
 
     }
 }

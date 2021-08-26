@@ -7,7 +7,7 @@ using Pathfinding;
 public class EnemyAI : MonoBehaviour
 {
     [Header ("References")]
-    public GameManager GM;
+    [HideInInspector]public GameManager GM;
     public Transform target;
     public Transform playerRef;
     public Transform enemyGFX;
