@@ -69,8 +69,9 @@ public class PlayerLogic : MonoBehaviour
         }
     }
     
-    private void OnCollisionEnter2D(Collider2D collider)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        Collider2D collider = collision.collider;
         if (isTackling)
         {
             Sequence playerHitSeq = DOTween.Sequence();
