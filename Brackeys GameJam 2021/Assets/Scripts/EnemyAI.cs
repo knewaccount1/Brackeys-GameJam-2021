@@ -76,7 +76,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Awake()
     {
-        target = FindObjectOfType<Player>().transform;
+        target = FindObjectOfType<PlayerLogic>().transform;
         playerRef = target;
         GM = FindObjectOfType<GameManager>();
     }

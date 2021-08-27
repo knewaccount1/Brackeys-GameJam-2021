@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using FMOD;
 using FMODUnity;
+using UnityEngine.UI;
+using TMPro;
 
 
 public class GameManager : MonoBehaviour
@@ -21,6 +23,10 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public int destroyedInteractables;
 
+
+    [Header("UI References")]
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI timerText;
 
     [Header("FMOD Parameters")]
     public string bgmEvent = "event:/";
@@ -62,6 +68,7 @@ public class GameManager : MonoBehaviour
         timer -= Time.deltaTime;
         seconds = (int)timer;
 
+        timerText.text = seconds + " sec";
         //Updating FMOD Timer
         bgm.setParameterByID(bgmTimerID, (float)seconds/maxTime);
     }

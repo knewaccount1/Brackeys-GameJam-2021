@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class PlayerLogic : MonoBehaviour
 {
+
     public float moveSpeed;
     private float origMoveSPeed;
     private Vector3 moveDirection;
@@ -20,7 +21,10 @@ public class PlayerLogic : MonoBehaviour
 
     [SerializeField][Range (0.1f,5)] private float tackleAccTime;
     [SerializeField][Range (-1,6)] private float tackleDistMul;
-    
+
+    //Added by Ed to test Enemy AI. Can be changed/edited later
+    [SerializeField] bool isStunned;
+
     void Awake()
     {
         // Variables initial values
@@ -199,7 +203,44 @@ public class PlayerLogic : MonoBehaviour
         canMove = false;
     }
 
-    
 
+
+
+    /// <summary>
+    /// Added Slow/Stun methods inside of the player logic that is called by the Enemy on collision
+    /// Update as needed
+    /// </summary>
+
+    public void SlowEffect(float slowTimer)
+    {
+        StartCoroutine(SlowEffectCoroutine(slowTimer));
+    }
+    IEnumerator SlowEffectCoroutine(float slowTimer)
+    {
+        Debug.Log("collided with player");
+
+        moveSpeed = moveSpeed / 3;
+        yield return new WaitForSeconds(slowTimer);
+        moveSpeed *= 3;
+    }
+
+    public void StunEffect(float stunTime)
+    {
+        if (!isStunned)
+            StartCoroutine(StunEffectCoroutine(stunTime));
+    }
+
+    IEnumerator StunEffectCoroutine(float stunTime)
+    {
+        canMove = false;
+        isStunned = true;
+        //Play stun effect/particles here
+    
+        yield return new WaitForSeconds(stunTime);
+        canMove = true;
+        yield return new WaitForSeconds(.5f);
+        isStunned = false;
+
+    }
 
 }

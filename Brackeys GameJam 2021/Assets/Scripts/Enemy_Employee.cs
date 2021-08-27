@@ -12,7 +12,7 @@ public class Enemy_Employee : EnemyAI
     private float timeRepairing;
     public LayerMask interactableLayer;
     public Interactable interactableToRepair;
-    Collider2D[] hit2D;
+    [SerializeField] Collider2D[] hit2D;
 
     
 
@@ -185,7 +185,7 @@ public class Enemy_Employee : EnemyAI
         if (collision.CompareTag("Player"))
         {
             
-            collision.GetComponentInParent<Movement>().SlowEffect(slowTime);
+            collision.GetComponentInParent<PlayerLogic>().SlowEffect(slowTime);
         }
     }
 }

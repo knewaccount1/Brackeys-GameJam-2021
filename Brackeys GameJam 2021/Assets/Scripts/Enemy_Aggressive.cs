@@ -75,7 +75,8 @@ public class Enemy_Aggressive : EnemyAI
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponentInParent<Movement>().StunEffect(stunDuration);
+
+            collision.GetComponentInParent<PlayerLogic>().StunEffect(stunDuration);
         }
     }
 
