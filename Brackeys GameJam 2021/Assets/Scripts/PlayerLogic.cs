@@ -14,6 +14,7 @@ public class PlayerLogic : MonoBehaviour
     private bool canMove;
     private SpriteRenderer playerSpriteRenderer;
     private Sprite playerSprite;
+    public Camera cameraObject;
 
     [SerializeField][Range (0.1f,5)] private float tackleAccTime;
     [SerializeField][Range (-1,6)] private float tackleDistMul;
@@ -47,6 +48,11 @@ public class PlayerLogic : MonoBehaviour
                 StartTackleSequence();
             }
         }
+        else
+        {
+            // Player is  currently in a tackle procedure - start animation for tackle
+
+        }
     }
 
     // FixedUpdate is called on a fixed timer
@@ -59,31 +65,43 @@ public class PlayerLogic : MonoBehaviour
             {
                 // if player is not tackling, check if he presses tackle, if he does - start tackle, else: move him.
                 MovePlayer(moveDirection);
-            }
-                
-        }
-        else
-        {
-            // Player is  currently in a tackle procedure - check for collisions - if collided stop the sequence, start animation for hit and destroy object in moveDirection, after animation return control to player
-
+            }   
         }
     }
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Collider2D collider = collision.collider;
-        if (isTackling)
+        Transform collider = collision.collider.transform;
+        if (collider.tag == "Interactable")
         {
-            Sequence playerHitSeq = DOTween.Sequence();
-            playerHitSeq.SetId("TackleHit");
+            if (isTackling)
+            {
+                //Stop tackle animation and/or start tackle hit animation
 
-            Debug.LogWarning("I have collided during tackle!!!!");
-            DOTween.Kill("TackleAcceleration");
 
-            playerHitSeq.Insert(0, DOVirtual.DelayedCall(hitAnimationTime, HitAnimationEnded));
+                BoxBounds boxBounds = collider.parent.Find("DropBounds").GetComponent<BoxBounds>();
+                Vector2 spawnPoint = boxBounds.RandomPointInBounds();
+                Instantiate((GameObject)Resources.Load("Prefabs/Boost", typeof(GameObject)), spawnPoint, Quaternion.identity);
+                Debug.LogWarning(spawnPoint);
+
+                Sequence playerHitSeq = DOTween.Sequence();
+                playerHitSeq.SetId("TackleHit");
+
+                DOTween.Kill("TackleStart");
+
+                playerHitSeq.Insert(0f, cameraObject.transform.DOShakePosition(0.2f, 0.2f, 100, 90f, false));
+                playerHitSeq.Insert(0, DOVirtual.DelayedCall(hitAnimationTime, HitAnimationEnded));
+            }
+        }
+        else if (collider.tag == "TimeBoost")
+        {
+
+        }
+        else if (collider.tag == "SpeedBoost")
+        {
+
         }
         Debug.LogWarning("I have collided!");
-
     }
 
     private void StartTackleSequence()
@@ -91,7 +109,7 @@ public class PlayerLogic : MonoBehaviour
         isTackling = true;
 
         Sequence playerTackleSeq = DOTween.Sequence();
-        playerTackleSeq.SetId("TackleAcceleration");
+        playerTackleSeq.SetId("TackleStart");
         
         playerTackleSeq.Insert(0f ,rb2D.DOMove(transform.position + moveDirection * tackleDistMul, tackleAccTime).SetEase(Ease.OutQuint));
         playerTackleSeq.InsertCallback(tackleAccTime, EndTackleSequence);
