@@ -13,8 +13,11 @@ public class Interactable : MonoBehaviour
     [HideInInspector]public bool beingRepaired;
 
 
-
     public PowerUp powerUpPrefab;
+    public SpeedBoost speedBoostPrefab;
+
+    
+    public GameObject boostSpawner;
 
     [Header("FMOD SFX")]
     public string SFX = "event:/";
@@ -50,18 +53,48 @@ public class Interactable : MonoBehaviour
     {
         if (!isDamaged)
         {
-            GM.destroyedInteractables++;
-            PowerUp powerUp = Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
+            //Stop tackle animation and/or start tackle hit animation
+            BoxBounds boxBounds = boostSpawner.GetComponentInChildren<BoxBounds>();
+            
+            
+            
+            // Time Boost Drop
+            if (true)
+            //if (Random.Range(0,1) >= 0.75)
+            {
+                Vector2 spawnPoint = boxBounds.RandomPointInBounds();
+                Transform powerUp = Instantiate((GameObject)Resources.Load("Prefabs/Time", typeof(GameObject)), spawnPoint, Quaternion.identity).transform;
+                //powerUp.GetComponent<PowerUp>().SetPowerType("TimeBoost");
 
-            Vector2 kbDirection = transform.position - GM.playerRef.transform.position;
-            kbDirection.Normalize();
-            powerUp.GetComponent<Rigidbody2D>().AddForce(kbDirection * 10f, ForceMode2D.Impulse);
+            }
+
+            // Check if is a fruit type shelf
+            if (speedBoostPrefab != null)
+            {
+                Vector2 spawnPoint = boxBounds.RandomPointInBounds();
+                // Drop a speed boost same as time boost
+                Transform speedBoost = Instantiate(speedBoostPrefab, spawnPoint, Quaternion.identity).transform;
+
+            }
+
+            
 
 
+
+
+            // GM.destroyedInteractables++;
+            // PowerUp powerUp = Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
+
+            // Vector2 kbDirection = transform.position - GM.playerRef.transform.position;
+            // kbDirection.Normalize();
+
+            // powerUp.GetComponent<Rigidbody2D>().AddForce(kbDirection * 10f, ForceMode2D.Impulse);
+            
+            
             isDamaged = true;
 
             //Add audio sprite change logic here;
-            FMODUnity.RuntimeManager.PlayOneShot(SFX, transform.position);
+            // FMODUnity.RuntimeManager.PlayOneShot(SFX, transform.position);
         }
 
     }
