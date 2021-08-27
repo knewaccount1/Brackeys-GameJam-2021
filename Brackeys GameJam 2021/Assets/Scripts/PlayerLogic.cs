@@ -81,10 +81,13 @@ public class PlayerLogic : MonoBehaviour
             DOTween.Kill("TackleAcceleration");
 
             playerHitSeq.Insert(0, DOVirtual.DelayedCall(hitAnimationTime, HitAnimationEnded));
+
+            
         }
         Debug.LogWarning("I have collided!");
 
     }
+
 
     private void StartTackleSequence()
     {
