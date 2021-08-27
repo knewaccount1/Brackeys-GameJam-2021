@@ -1,0 +1,768 @@
+fileFormatVersion: 2
+guid: 3ff2f0011a691c146983ec95a44aac48
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8447485983475630409
+    second: asset export 2_0
+  - first:
+      213: -5878112248324681987
+    second: asset export 2_1
+  - first:
+      213: -5749809535568653962
+    second: asset export 2_2
+  - first:
+      213: -3549491368398385413
+    second: asset export 2_3
+  - first:
+      213: 3090282347786039555
+    second: asset export 2_4
+  - first:
+      213: -6084560774218404053
+    second: asset export 2_5
+  - first:
+      213: 5426301859032600691
+    second: asset export 2_6
+  - first:
+      213: 8595273506465799950
+    second: asset export 2_7
+  - first:
+      213: -6649971501186390244
+    second: asset export 2_8
+  - first:
+      213: -6782746415156590072
+    second: asset export 2_9
+  - first:
+      213: 5117966171126364502
+    second: asset export 2_10
+  - first:
+      213: -7670842692926875267
+    second: asset export 2_11
+  - first:
+      213: 1704842022075117345
+    second: asset export 2_12
+  - first:
+      213: 2559351339009755605
+    second: asset export 2_13
+  - first:
+      213: 6627945424963471402
+    second: asset export 2_14
+  - first:
+      213: -3403376412565157414
+    second: asset export 2_15
+  - first:
+      213: -5726959641468313897
+    second: asset export 2_16
+  - first:
+      213: -4437208419164381034
+    second: asset export 2_17
+  - first:
+      213: 7437008735738460108
+    second: asset export 2_18
+  - first:
+      213: -8232887948976818702
+    second: asset export 2_19
+  - first:
+      213: 7260450605753457460
+    second: asset export 2_20
+  - first:
+      213: 220383808164629320
+    second: asset export 2_21
+  - first:
+      213: 6806435117644324568
+    second: asset export 2_22
+  - first:
+      213: 4312089512212527974
+    second: asset export 2_23
+  - first:
+      213: 4172488503149314406
+    second: asset export 2_24
+  - first:
+      213: -1225025312411388324
+    second: asset export 2_25
+  - first:
+      213: -1765553930343221372
+    second: asset export 2_26
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: asset export 2_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 495
+        width: 314
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 941082acebf7b3570800000000000000
+      internalID: 8447485983475630409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_1
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 719
+        width: 313
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfe0cb0cd00cc6ea0800000000000000
+      internalID: -5878112248324681987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_2
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 619
+        width: 348
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 671d642f0b29430b0800000000000000
+      internalID: -5749809535568653962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_3
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 1009
+        width: 126
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe8c4d086cadbec0800000000000000
+      internalID: -3549491368398385413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_4
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 1010
+        width: 94
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301727b1c63e2ea20800000000000000
+      internalID: 3090282347786039555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_5
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 964
+        width: 58
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2faf66963c4f8ba0800000000000000
+      internalID: -6084560774218404053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_6
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 944
+        width: 152
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3701eaf7ac81e4b40800000000000000
+      internalID: 5426301859032600691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_7
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 890
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0f5834e6bb884770800000000000000
+      internalID: 8595273506465799950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_8
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 871
+        width: 75
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c176059172e86b3a0800000000000000
+      internalID: -6649971501186390244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_9
+      rect:
+        serializedVersion: 2
+        x: 1673
+        y: 882
+        width: 79
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80a890b6218ded1a0800000000000000
+      internalID: -6782746415156590072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_10
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 863
+        width: 140
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 659f372dd1ba60740800000000000000
+      internalID: 5117966171126364502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_11
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 721
+        width: 98
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7951307631bb8590800000000000000
+      internalID: -7670842692926875267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_12
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 689
+        width: 60
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f22f359c0d8a710800000000000000
+      internalID: 1704842022075117345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_13
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 771
+        width: 74
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d9c8199b74a48320800000000000000
+      internalID: 2559351339009755605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_14
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 654
+        width: 153
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a288f956f313bfb50800000000000000
+      internalID: 6627945424963471402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_15
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 379
+        width: 313
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad94c144f27c4c0d0800000000000000
+      internalID: -3403376412565157414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_16
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 659
+        width: 44
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de584f7c80c580b0800000000000000
+      internalID: -5726959641468313897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_17
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 654
+        width: 172
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 690a55db37edb62c0800000000000000
+      internalID: -4437208419164381034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_18
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 5
+        width: 313
+        height: 491
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc7fa2dca00953760800000000000000
+      internalID: 7437008735738460108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_19
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 13
+        width: 313
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f574a5b708eebd80800000000000000
+      internalID: -8232887948976818702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_20
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 14
+        width: 524
+        height: 594
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43b5431cb5d42c460800000000000000
+      internalID: 7260450605753457460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_21
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 316
+        width: 347
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b86e7e7e5fe0300800000000000000
+      internalID: 220383808164629320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_22
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 296
+        width: 344
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8de1fed6da0557e50800000000000000
+      internalID: 6806435117644324568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_23
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 13
+        width: 171
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b7d1f909e97db30800000000000000
+      internalID: 4312089512212527974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_24
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 11
+        width: 159
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 661cd93df28a7e930800000000000000
+      internalID: 4172488503149314406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_25
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 13
+        width: 166
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c567bd408f5dffee0800000000000000
+      internalID: -1225025312411388324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset export 2_26
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 17
+        width: 173
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 487f81efd0e7f77e0800000000000000
+      internalID: -1765553930343221372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
