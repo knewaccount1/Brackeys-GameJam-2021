@@ -6,6 +6,7 @@ using DG.Tweening;
 public class PlayerLogic : MonoBehaviour
 {
     public float moveSpeed;
+    private float origMoveSPeed;
     private Vector3 moveDirection;
     public Rigidbody2D rb2D;
     public bool isTackling;
@@ -15,6 +16,7 @@ public class PlayerLogic : MonoBehaviour
     private SpriteRenderer playerSpriteRenderer;
     private Sprite playerSprite;
     public Camera cameraObject;
+    public bool speedBoosted;
 
     [SerializeField][Range (0.1f,5)] private float tackleAccTime;
     [SerializeField][Range (-1,6)] private float tackleDistMul;
@@ -22,11 +24,13 @@ public class PlayerLogic : MonoBehaviour
     void Awake()
     {
         // Variables initial values
-        moveSpeed = 10f;
+        origMoveSPeed = 10f;
+        moveSpeed = origMoveSPeed;
         tackleAccTime = 1.7f;
         tackleDistMul = 4;
         hitAnimationTime = 1f;
         canMove = true;
+        speedBoosted = false;
     }
 
     void Start()
@@ -76,13 +80,15 @@ public class PlayerLogic : MonoBehaviour
         {
             if (isTackling)
             {
+                collider.gameObject.GetComponent<Interactable>().DestroyInteractable();
+                
+                // -------------------THIS CODE MOVED TO INTERACTABLES CLASS--------------------
                 //Stop tackle animation and/or start tackle hit animation
-
-
-                BoxBounds boxBounds = collider.parent.Find("DropBounds").GetComponent<BoxBounds>();
-                Vector2 spawnPoint = boxBounds.RandomPointInBounds();
-                Instantiate((GameObject)Resources.Load("Prefabs/Boost", typeof(GameObject)), spawnPoint, Quaternion.identity);
-                Debug.LogWarning(spawnPoint);
+                // BoxBounds boxBounds = collider.parent.Find("DropBounds").GetComponent<BoxBounds>();
+                // Vector2 spawnPoint = boxBounds.RandomPointInBounds();
+                // var powerUp = Instantiate((GameObject)Resources.Load("Prefabs/Boost", typeof(GameObject)), spawnPoint, Quaternion.identity);
+                // Debug.LogWarning(spawnPoint);
+                // -----------------------------------------------------------------------------
 
                 Sequence playerHitSeq = DOTween.Sequence();
                 playerHitSeq.SetId("TackleHit");
@@ -102,6 +108,17 @@ public class PlayerLogic : MonoBehaviour
 
         }
         Debug.LogWarning("I have collided!");
+    }
+
+    public void BoostSpeedStart(float speedBoostDuration)
+    {
+        moveSpeed = moveSpeed * 2f;
+        Sequence moveSpeedSeq = DOTween.Sequence();
+        moveSpeedSeq.Insert(0f, DOVirtual.DelayedCall(speedBoostDuration ,BoostSpeedEnd));
+    }
+    private void BoostSpeedEnd()
+    {
+        moveSpeed = origMoveSPeed;
     }
 
     private void StartTackleSequence()
