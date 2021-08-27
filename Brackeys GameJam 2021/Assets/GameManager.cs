@@ -11,10 +11,15 @@ public class GameManager : MonoBehaviour
     public int interactablesToWin;
     public int score;
 
+    [HideInInspector]public Player playerRef;
+
     [HideInInspector] public int destroyedInteractables;
 
     private void Start()
     {
+
+        playerRef = FindObjectOfType<Player>();
+
         allInteractables = new List<Interactable>();
 
         

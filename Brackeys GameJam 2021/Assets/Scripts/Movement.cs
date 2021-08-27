@@ -216,4 +216,13 @@ public class Movement : MonoBehaviour
         isStunned = false;
 
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Interactable"))
+        {
+            collision.collider.GetComponent<Interactable>().DestroyInteractable();
+
+        }
+    }
 }

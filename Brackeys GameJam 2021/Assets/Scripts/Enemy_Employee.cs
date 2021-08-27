@@ -8,9 +8,15 @@ public class Enemy_Employee : EnemyAI
 
     public float searchDistance = 15f;
     public float slowTime;
+    public float repairTime;
+    private float timeRepairing;
     public LayerMask interactableLayer;
     public Interactable interactableToRepair;
     Collider2D[] hit2D;
+
+    
+
+    bool isRepairing;
 
     public void SearchForInteractables()
     {
@@ -137,6 +143,7 @@ public class Enemy_Employee : EnemyAI
                 Debug.Log("Moving towards repairable object");
                 if (posDelta <= attackRange)
                 {
+                    timeRepairing = repairTime;
                     currentState = EnemyState.UNIQUE_ATTACK;
                 }
             }
@@ -155,8 +162,15 @@ public class Enemy_Employee : EnemyAI
     public override void UniqueAttack()
     {
         //Repair the object here
-        
-        interactableToRepair.RepairObject();
+
+        timeRepairing -= Time.deltaTime;
+
+        if(timeRepairing <= 0)
+        {
+            interactableToRepair.RepairObject();
+            timeRepairing = repairTime;
+        }
+
 
         if (!interactableToRepair.isDamaged)
         {
@@ -165,13 +179,6 @@ public class Enemy_Employee : EnemyAI
         }
     }
 
-    public class DistanceCompare : IComparer
-    {
-        public int Compare(object x, object y)
-        {
-            throw new System.NotImplementedException();
-        }
-    }
 
     public override void OnTriggerEnter2D(Collider2D collision)
     {

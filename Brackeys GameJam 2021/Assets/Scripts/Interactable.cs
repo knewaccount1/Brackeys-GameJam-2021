@@ -2,15 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using FMODUnity;
+using FMOD;
 
 public class Interactable : MonoBehaviour
 {
     private GameManager GM;
     private Rigidbody2D rb2D;
     public bool isDamaged;
+    [HideInInspector]public bool beingRepaired;
 
-    public AudioClip destroyAudio;
-    
+
+
+    public PowerUp powerUpPrefab;
+
+    [Header("FMOD SFX")]
+    public string SFX = "event:/";
 
     private void Start()
     {
@@ -29,16 +36,32 @@ public class Interactable : MonoBehaviour
         
     }
 
+    //Called by employee units
     public void RepairObject()
     {
-        Debug.Log("Employee is trying to repair object");
+        UnityEngine.Debug.Log("Employee repaired object");
         GM.destroyedInteractables--;
+        isDamaged = false;
+        //Swap sprites here. Play audio here.
     }
 
+    //Called on collision with something player tackle
     public void DestroyInteractable()
     {
+        if (!isDamaged)
+        {
+            GM.destroyedInteractables++;
+            PowerUp powerUp = Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
 
-        GM.destroyedInteractables++;
-       
+            Vector2 kbDirection = transform.position - GM.playerRef.transform.position;
+            kbDirection.Normalize();
+
+            powerUp.GetComponent<Rigidbody2D>().AddForce(kbDirection * 10f, ForceMode2D.Impulse);
+            isDamaged = true;
+
+            //Add audio sprite change logic here;
+            FMODUnity.RuntimeManager.PlayOneShot(SFX, transform.position);
+        }
+
     }
 }
