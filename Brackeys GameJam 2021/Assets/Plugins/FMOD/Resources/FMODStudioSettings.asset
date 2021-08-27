@@ -598,10 +598,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   SwitchSettingsMigration: 1
-  HasSourceProject: 0
-  HasPlatforms: 0
-  sourceProjectPath: 
-  sourceBankPath: Assets/Sounds/FMOD Bank/Test Bank
+  HasSourceProject: 1
+  HasPlatforms: 1
+  sourceProjectPath: Assets/Sounds/FMOD Bank/Supermarket/Supermarket/Supermarket.fspro
+  sourceBankPath: Assets/Sounds/FMOD Bank/Supermarket/Supermarket/Build
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -624,9 +624,7 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Master
-  Banks:
-  - Music
-  - SFX
+  Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

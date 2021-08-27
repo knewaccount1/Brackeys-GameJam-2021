@@ -22,7 +22,7 @@ public class Enemy_Employee : EnemyAI
     {
         interactableLayer = 1 << 10;
         hit2D = Physics2D.OverlapCircleAll(transform.position, searchDistance, interactableLayer);
-        Debug.Log(hit2D.Length);
+
         //hit2D = Physics2D.CircleCast(transform.position, searchDistance, Vector2.right, 0, interactableLayer);
 
 

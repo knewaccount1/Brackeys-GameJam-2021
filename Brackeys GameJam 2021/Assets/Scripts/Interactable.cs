@@ -55,8 +55,9 @@ public class Interactable : MonoBehaviour
 
             Vector2 kbDirection = transform.position - GM.playerRef.transform.position;
             kbDirection.Normalize();
-
             powerUp.GetComponent<Rigidbody2D>().AddForce(kbDirection * 10f, ForceMode2D.Impulse);
+
+
             isDamaged = true;
 
             //Add audio sprite change logic here;
