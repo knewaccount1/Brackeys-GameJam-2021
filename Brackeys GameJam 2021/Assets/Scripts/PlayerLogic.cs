@@ -18,6 +18,7 @@ public class PlayerLogic : MonoBehaviour
     private Sprite playerSprite;
     public Camera cameraObject;
     public bool speedBoosted;
+    public bool canTackle;
 
     [SerializeField][Range (0.1f,5)] private float tackleAccTime;
     [SerializeField][Range (-1,6)] private float tackleDistMul;
@@ -30,11 +31,12 @@ public class PlayerLogic : MonoBehaviour
         // Variables initial values
         origMoveSPeed = 10f;
         moveSpeed = origMoveSPeed;
-        tackleAccTime = 1.7f;
-        tackleDistMul = 4;
+        tackleAccTime = 0.5f;
+        tackleDistMul = 6;
         hitAnimationTime = 1f;
         canMove = true;
         speedBoosted = false;
+        canTackle = true;
     }
 
     void Start()
@@ -52,7 +54,7 @@ public class PlayerLogic : MonoBehaviour
         if (!isTackling)
         {
             CheckMovement();
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && canTackle)
             {
                 StartTackleSequence();
             }
@@ -85,6 +87,7 @@ public class PlayerLogic : MonoBehaviour
         {
             if (isTackling)
             {
+                isTackling = false;
                 collider.gameObject.GetComponent<Interactable>().DestroyInteractable();
                 
                 // -------------------THIS CODE MOVED TO INTERACTABLES CLASS--------------------
@@ -129,12 +132,23 @@ public class PlayerLogic : MonoBehaviour
     private void StartTackleSequence()
     {
         isTackling = true;
+        canTackle = false;
+
+        Sequence tackleDisabled = DOTween.Sequence();
+        tackleDisabled.SetId("TackleDisabled");
 
         Sequence playerTackleSeq = DOTween.Sequence();
         playerTackleSeq.SetId("TackleStart");
         
-        playerTackleSeq.Insert(0f ,rb2D.DOMove(transform.position + moveDirection * tackleDistMul, tackleAccTime).SetEase(Ease.OutSine));
+        playerTackleSeq.Insert(0f ,rb2D.DOMove(transform.position + moveDirection * tackleDistMul, tackleAccTime));
         playerTackleSeq.InsertCallback(tackleAccTime, EndTackleSequence);
+        
+        tackleDisabled.InsertCallback(2f, EnableTackle);
+    }
+    private void EnableTackle()
+    {
+        canTackle = true;
+        DOTween.Kill("TackleDisabled");
     }
 
     private void EndTackleSequence()
