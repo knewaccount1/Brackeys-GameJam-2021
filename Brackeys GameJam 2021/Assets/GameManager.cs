@@ -7,6 +7,8 @@ using FMODUnity;
 using UnityEngine.UI;
 using TMPro;
 
+using Cinemachine;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +24,15 @@ public class GameManager : MonoBehaviour
     [HideInInspector]public Player playerRef;
 
     [HideInInspector] public int destroyedInteractables;
+
+    [Header("Camera Shake Parameters")]
+    public CinemachineVirtualCamera vCam;
+    CinemachineBasicMultiChannelPerlin noise;
+    public float shakeAmplitude;
+    public float shakeFrequency;
+    public float shakeTime;
+    private float shakeTimer;
+    private float startingAmplitude;
 
 
     [Header("UI References")]
@@ -56,10 +67,33 @@ public class GameManager : MonoBehaviour
         bgmTimerDescription.getParameterDescriptionByName("Timer", out timerParameterDescrition);
         bgmTimerID = timerParameterDescrition.id;
 
+
+        //Cinemachine rigging
+        noise = vCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
+
+    public void ShakeCam()
+    {
+        startingAmplitude = shakeAmplitude;
+        noise.m_AmplitudeGain = shakeAmplitude;
+        noise.m_FrequencyGain = shakeFrequency;
+        shakeTimer = shakeTime;
+
+    }
+
 
     private void Update()
     {
+
+        if(shakeTimer > 0)
+        {
+            shakeTimer -= Time.deltaTime;
+
+            noise.m_AmplitudeGain = Mathf.Lerp(startingAmplitude, 0f, 1 - (shakeTimer / shakeTime));
+            
+        }
+
+
         if (Input.GetKey(KeyCode.Alpha0))
         {
             SceneManager.LoadScene(1);

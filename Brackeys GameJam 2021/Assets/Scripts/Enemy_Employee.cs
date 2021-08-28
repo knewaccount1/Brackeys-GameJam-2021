@@ -90,7 +90,31 @@ public class Enemy_Employee : EnemyAI
         AStarPathFinding();
 
         float distanceDelta = Vector3.Distance(transform.position, target.transform.position);
- 
+
+
+        //Animation Spaghetti code
+        Vector2 posDelta = target.transform.position - transform.position;
+        if (Mathf.Abs(posDelta.x) < 3)
+        {
+            if (posDelta.y >= 2)
+            {
+                animator.Play("employee back anim");
+            }
+            else if (posDelta.y <= -2)
+            {
+                animator.Play("employee front anim");
+            }
+            else
+            {
+                animator.Play("employee side anim");
+            }
+        }
+        else
+        {
+
+            animator.Play("employee side anim");
+        }
+
         if (distanceDelta > chaseDistance)
         {
             if (timeBeforeIdleCountdown <= 0)

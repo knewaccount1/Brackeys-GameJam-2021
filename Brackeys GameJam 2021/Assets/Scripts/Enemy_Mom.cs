@@ -48,6 +48,7 @@ public class Enemy_Mom : EnemyAI
 
         float distanceDelta = Vector3.Distance(transform.position, target.transform.position);
 
+        //Animation Spaghetti code
         Vector2 posDelta = target.transform.position - transform.position;
         if(Mathf.Abs(posDelta.x) < 3)
         {

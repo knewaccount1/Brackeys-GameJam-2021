@@ -11,14 +11,17 @@ public class PlayerLogic : MonoBehaviour
     private Vector3 moveDirection;
     public Rigidbody2D rb2D;
     public bool isTackling;
+    public float tackleCooldown;
     private Vector2 movement;
-    private float hitAnimationTime;
+    [SerializeField]private float hitAnimationTime;
     private bool canMove;
     private SpriteRenderer playerSpriteRenderer;
     private Sprite playerSprite;
     public Camera cameraObject;
     public bool speedBoosted;
     public bool canTackle;
+
+    private GameManager GM;
 
     [SerializeField][Range (0.1f,5)] private float tackleAccTime;
     [SerializeField][Range (-1,6)] private float tackleDistMul;
@@ -29,14 +32,12 @@ public class PlayerLogic : MonoBehaviour
     void Awake()
     {
         // Variables initial values
-        origMoveSPeed = 10f;
-        moveSpeed = origMoveSPeed;
-        tackleAccTime = 0.5f;
-        tackleDistMul = 6;
-        hitAnimationTime = 1f;
+        origMoveSPeed = moveSpeed;
+
         canMove = true;
         speedBoosted = false;
         canTackle = true;
+        GM = FindObjectOfType<GameManager>();
     }
 
     void Start()
@@ -80,6 +81,13 @@ public class PlayerLogic : MonoBehaviour
         }
     }
     
+
+    //This was added to place a delay between hitting an object and returning tackle state to true
+    void SetTackleFalse()
+    {
+        isTackling = false;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Transform collider = collision.collider.transform;
@@ -87,9 +95,14 @@ public class PlayerLogic : MonoBehaviour
         {
             if (isTackling)
             {
-                isTackling = false;
+                Invoke("SetTackleFalse", .5f);
                 collider.gameObject.GetComponent<Interactable>().DestroyInteractable();
-                
+
+                GM.ShakeCam();
+                Vector2 posDelta = transform.position - collider.transform.position;
+                posDelta.Normalize();
+                rb2D.AddForce(-moveDirection * 15f, ForceMode2D.Impulse);
+
                 // -------------------THIS CODE MOVED TO INTERACTABLES CLASS--------------------
                 //Stop tackle animation and/or start tackle hit animation
                 // BoxBounds boxBounds = collider.parent.Find("DropBounds").GetComponent<BoxBounds>();
@@ -143,7 +156,7 @@ public class PlayerLogic : MonoBehaviour
         playerTackleSeq.Insert(0f ,rb2D.DOMove(transform.position + moveDirection * tackleDistMul, tackleAccTime));
         playerTackleSeq.InsertCallback(tackleAccTime, EndTackleSequence);
         
-        tackleDisabled.InsertCallback(2f, EnableTackle);
+        tackleDisabled.InsertCallback(tackleCooldown, EnableTackle);
     }
     private void EnableTackle()
     {
@@ -188,6 +201,11 @@ public class PlayerLogic : MonoBehaviour
             canMove = true;
             
         }
+        else
+        {
+            moveDirection = Vector3.zero;
+            canMove = true;
+        }
     }
 
 
@@ -211,17 +229,24 @@ public class PlayerLogic : MonoBehaviour
             playerSpriteRenderer.flipX = false;
             playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite side_0") as RuntimeAnimatorController;
         }
-        else
+        else if(moveDirection == Vector3.right)
         {
             playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Left", typeof(Sprite));
             playerSpriteRenderer.flipX = true;
             playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite side_0") as RuntimeAnimatorController;
         }
+        else
+        {
+            //do nothing
+        }
+
         playerSpriteRenderer.sprite = playerSprite;
         Vector3 newPosition = transform.position;
-        newPosition.x = transform.position.x + moveDirection.x * moveSpeed * Time.deltaTime;
-        newPosition.y = transform.position.y + moveDirection.y * moveSpeed * Time.deltaTime;
-        transform.position = newPosition;
+
+        rb2D.velocity = moveDirection * moveSpeed;
+        //newPosition.x = transform.position.x + moveDirection.x * moveSpeed * Time.deltaTime;
+        //newPosition.y = transform.position.y + moveDirection.y * moveSpeed * Time.deltaTime;
+        //transform.position = newPosition;
         canMove = false;
     }
 
