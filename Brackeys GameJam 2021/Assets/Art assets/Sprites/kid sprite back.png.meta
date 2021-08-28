@@ -126,8 +126,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 640
-        height: 1280
+        width: 320
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,10 +145,10 @@ TextureImporter:
       name: kid sprite back_1
       rect:
         serializedVersion: 2
-        x: 640
+        x: 320
         y: 0
-        width: 640
-        height: 1280
+        width: 320
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,10 +166,10 @@ TextureImporter:
       name: kid sprite back_2
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 640
         y: 0
-        width: 640
-        height: 1280
+        width: 320
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,10 +187,10 @@ TextureImporter:
       name: kid sprite back_3
       rect:
         serializedVersion: 2
-        x: 1920
+        x: 960
         y: 0
-        width: 640
-        height: 1280
+        width: 320
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,10 +208,10 @@ TextureImporter:
       name: kid sprite back_4
       rect:
         serializedVersion: 2
-        x: 2560
+        x: 1280
         y: 0
-        width: 640
-        height: 1280
+        width: 320
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,10 +229,10 @@ TextureImporter:
       name: kid sprite back_5
       rect:
         serializedVersion: 2
-        x: 3200
+        x: 1600
         y: 0
-        width: 640
-        height: 1280
+        width: 320
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
