@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class PlayerLogic : MonoBehaviour
 {
-
+    public Animator playerAnimator;
     public float moveSpeed;
     private float origMoveSPeed;
     private Vector3 moveDirection;
@@ -42,6 +42,7 @@ public class PlayerLogic : MonoBehaviour
         rb2D = this.GetComponent<Rigidbody2D>();
         playerSpriteRenderer = this.GetComponent<SpriteRenderer>();
         isTackling = false;
+        playerAnimator = this.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -116,7 +117,7 @@ public class PlayerLogic : MonoBehaviour
 
     public void BoostSpeedStart(float speedBoostDuration)
     {
-        moveSpeed = moveSpeed * 2f;
+        moveSpeed = origMoveSPeed * 1.3f;
         Sequence moveSpeedSeq = DOTween.Sequence();
         moveSpeedSeq.Insert(0f, DOVirtual.DelayedCall(speedBoostDuration ,BoostSpeedEnd));
     }
@@ -132,7 +133,7 @@ public class PlayerLogic : MonoBehaviour
         Sequence playerTackleSeq = DOTween.Sequence();
         playerTackleSeq.SetId("TackleStart");
         
-        playerTackleSeq.Insert(0f ,rb2D.DOMove(transform.position + moveDirection * tackleDistMul, tackleAccTime).SetEase(Ease.OutQuint));
+        playerTackleSeq.Insert(0f ,rb2D.DOMove(transform.position + moveDirection * tackleDistMul, tackleAccTime).SetEase(Ease.OutSine));
         playerTackleSeq.InsertCallback(tackleAccTime, EndTackleSequence);
     }
 
@@ -159,16 +160,19 @@ public class PlayerLogic : MonoBehaviour
         {
             moveDirection = Vector3.down;
             canMove = true;
+            
         }
         else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             moveDirection = Vector3.left;
             canMove = true;
+            
         }
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             moveDirection = Vector3.right;
             canMove = true;
+            
         }
     }
 
@@ -179,21 +183,25 @@ public class PlayerLogic : MonoBehaviour
         {
             playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Back", typeof(Sprite));
             playerSpriteRenderer.flipX = false;
+            playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite back_0") as RuntimeAnimatorController;
         }
         else if (moveDirection == Vector3.down)
         {
             playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Front", typeof(Sprite));
             playerSpriteRenderer.flipX = false;
+            playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite front_0") as RuntimeAnimatorController;
         }
         else if (moveDirection == Vector3.left)
         {
             playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Left", typeof(Sprite));
             playerSpriteRenderer.flipX = false;
+            playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite side_0") as RuntimeAnimatorController;
         }
         else
         {
             playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Left", typeof(Sprite));
             playerSpriteRenderer.flipX = true;
+            playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite side_0") as RuntimeAnimatorController;
         }
         playerSpriteRenderer.sprite = playerSprite;
         Vector3 newPosition = transform.position;
@@ -219,9 +227,9 @@ public class PlayerLogic : MonoBehaviour
     {
         Debug.Log("collided with player");
 
-        moveSpeed = moveSpeed / 3;
+        moveSpeed = origMoveSPeed / 3;
         yield return new WaitForSeconds(slowTimer);
-        moveSpeed *= 3;
+        moveSpeed = origMoveSPeed;
     }
 
     public void StunEffect(float stunTime)

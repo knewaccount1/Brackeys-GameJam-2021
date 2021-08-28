@@ -21,8 +21,6 @@ public class SpeedBoost : PowerUp
     protected override void Start()
     {
         base.Start();
-
-        
     }
 
 

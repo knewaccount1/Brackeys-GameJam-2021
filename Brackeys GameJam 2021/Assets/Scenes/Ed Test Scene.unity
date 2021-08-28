@@ -3824,11 +3824,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b40ac0bdb796e9489eb4e16008bd66d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 0}
   moveSpeed: 5
   rb2D: {fileID: 0}
   isTackling: 0
   cameraObject: {fileID: 34703717}
-  vCam: {fileID: 1994916905}
   speedBoosted: 0
   tackleAccTime: 1.7
   tackleDistMul: 6
