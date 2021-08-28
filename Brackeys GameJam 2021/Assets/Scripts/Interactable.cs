@@ -8,11 +8,15 @@ using FMOD;
 public class Interactable : MonoBehaviour
 {
     private GameManager GM;
+    private SpriteRenderer sr;
     private Rigidbody2D rb2D;
     public bool isDamaged;
+    
     [HideInInspector]public bool beingRepaired;
 
-
+    public ParticleSystem[] destroyParticle;
+    public Sprite damagedSprite;
+    private Sprite originalSprite;
     public PowerUp powerUpPrefab;
     public SpeedBoost speedBoostPrefab;
 
@@ -26,6 +30,8 @@ public class Interactable : MonoBehaviour
     {
         GM = FindObjectOfType<GameManager>();
         rb2D = GetComponent<Rigidbody2D>();
+        sr = GetComponentInChildren<SpriteRenderer>();
+        originalSprite = sr.sprite;
     }
 
 
@@ -45,6 +51,9 @@ public class Interactable : MonoBehaviour
         UnityEngine.Debug.Log("Employee repaired object");
         GM.destroyedInteractables--;
         isDamaged = false;
+        sr.sprite = originalSprite;
+
+        gameObject.layer = 10;
         //Swap sprites here. Play audio here.
     }
 
@@ -77,20 +86,23 @@ public class Interactable : MonoBehaviour
 
             }
 
-            
+
+            sr.sprite = damagedSprite;
 
 
+            //Vector2 posDelta = FindObjectOfType<PlayerLogic>().transform.position - transform.position;
+            //Vector2 downVector = (Vector2)transform.position - Vector2.down;
+            //posDelta.Normalize();
 
+            //float angle = Vector2.Angle(downVector, posDelta);
+            //UnityEngine.Debug.Log(angle);
+            foreach(ParticleSystem particle in destroyParticle)
+            {
+                Instantiate(particle, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+            }
 
-            // GM.destroyedInteractables++;
-            // PowerUp powerUp = Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
-
-            // Vector2 kbDirection = transform.position - GM.playerRef.transform.position;
-            // kbDirection.Normalize();
-
-            // powerUp.GetComponent<Rigidbody2D>().AddForce(kbDirection * 10f, ForceMode2D.Impulse);
-            
-            
+            //Setting layer to Destroyed for EnemyAI.
+            gameObject.layer = 12;
             isDamaged = true;
 
             //Add audio sprite change logic here;

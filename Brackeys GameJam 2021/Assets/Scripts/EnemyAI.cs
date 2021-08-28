@@ -103,6 +103,7 @@ public class EnemyAI : MonoBehaviour
         {
             case EnemyState.INITIALIZING:
                 /*filling in the player reference for easier access*/
+                Initialize();
                 currentState = EnemyState.IDLE;
                 break;
             case EnemyState.IDLE:
@@ -190,6 +191,10 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    public virtual void Initialize()
+    {
+
+    }
     public virtual void Idle()
     {
     }

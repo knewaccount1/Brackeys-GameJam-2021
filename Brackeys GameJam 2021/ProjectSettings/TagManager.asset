@@ -19,7 +19,7 @@ TagManager:
   - Obstacle
   - Interactable
   - EnemyTrigger
-  - 
+  - Destroyed
   - 
   - 
   - 
@@ -43,9 +43,15 @@ TagManager:
   - name: Background
     uniqueID: 158497607
     locked: 0
+  - name: BG Particle
+    uniqueID: 77018471
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Character
     uniqueID: 1549750973
+    locked: 0
+  - name: Particle
+    uniqueID: 3615860361
     locked: 0

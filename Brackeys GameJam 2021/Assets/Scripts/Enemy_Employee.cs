@@ -10,7 +10,7 @@ public class Enemy_Employee : EnemyAI
     public float slowTime;
     public float repairTime;
     private float timeRepairing;
-    public LayerMask interactableLayer;
+    public LayerMask destroyedLayer;
     public Interactable interactableToRepair;
     [SerializeField] Collider2D[] hit2D;
 
@@ -20,13 +20,17 @@ public class Enemy_Employee : EnemyAI
 
     public void SearchForInteractables()
     {
-        interactableLayer = 1 << 10;
-        hit2D = Physics2D.OverlapCircleAll(transform.position, searchDistance, interactableLayer);
+        //destroyedLayer = 1 << 10;
+        hit2D = Physics2D.OverlapCircleAll(transform.position, searchDistance, destroyedLayer);
 
         //hit2D = Physics2D.CircleCast(transform.position, searchDistance, Vector2.right, 0, interactableLayer);
 
-
     }
+
+    //public override void Initialize()
+    //{
+    //    hit2D = new Collider2D[0];
+    //}
 
     public override void Idle()
     {
@@ -37,14 +41,18 @@ public class Enemy_Employee : EnemyAI
         {
             currentState = EnemyState.SAWPLAYER;
         }
-        else if (hit2D != null)
+        else if (hit2D.Length >0)
         {
-            interactableToRepair = hit2D[0].GetComponent<Interactable>();
-            if (interactableToRepair.isDamaged)
-            {
-                if (Vector3.Distance(transform.position, interactableToRepair.transform.position) < searchDistance)
+            int i = Random.Range(0, hit2D.Length);
+            if (hit2D[i].GetComponent<Interactable>() != null)
+            { 
+                interactableToRepair = hit2D[i].GetComponent<Interactable>();
+                if (interactableToRepair.isDamaged)
                 {
-                    currentState = EnemyState.UNIQUE_CHASE;
+                    if (Vector3.Distance(transform.position, interactableToRepair.transform.position) < searchDistance)
+                    {
+                        currentState = EnemyState.UNIQUE_CHASE;
+                    }
                 }
             }
 
