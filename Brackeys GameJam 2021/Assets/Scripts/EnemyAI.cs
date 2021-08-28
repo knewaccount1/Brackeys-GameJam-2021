@@ -94,7 +94,7 @@ public class EnemyAI : MonoBehaviour
         currentState = EnemyState.INITIALIZING;
 
         health = maxHealth;
-        animator = GetComponent<Animator>();
+     
     }
 
     private void Update()
@@ -181,11 +181,13 @@ public class EnemyAI : MonoBehaviour
             currentWaypoint++;
         }
 
-        if (rb.velocity.x >= 0.01f)
+        Vector2 posDelta = target.transform.position - transform.position;
+
+        if (posDelta.x >= 0f)
         {
             enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
         }
-        else if (rb.velocity.x <= -0.01f)
+        else if (posDelta.x < 0f)
         {
             enemyGFX.localScale = new Vector3(1f, 1f, 1f);
         }

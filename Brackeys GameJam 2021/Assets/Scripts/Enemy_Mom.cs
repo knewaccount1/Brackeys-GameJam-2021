@@ -44,7 +44,31 @@ public class Enemy_Mom : EnemyAI
 
         AStarPathFinding();
 
+        //animator.Play("mom side anim");
+
         float distanceDelta = Vector3.Distance(transform.position, target.transform.position);
+
+        Vector2 posDelta = target.transform.position - transform.position;
+        if(Mathf.Abs(posDelta.x) < 3)
+        {
+            if (posDelta.y >= 2)
+            {
+                animator.Play("mom back anim");
+            }
+            else if (posDelta.y <= -2)
+            {
+                animator.Play("mom front anim");
+            }
+            else
+            {
+                animator.Play("mom side anim");
+            }
+        }
+        else
+        {
+
+            animator.Play("mom side anim");
+        }
 
         if (distanceDelta > chaseDistance)
         {
