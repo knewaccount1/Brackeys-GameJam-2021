@@ -13,7 +13,7 @@ public class PowerUp : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             //Play pick up audio and add effects to player;
-
+            
             Destroy(gameObject);
 
         }

@@ -24,7 +24,7 @@ public class Enemy_Mom : EnemyAI
             /*visualisation of enemy animation*/
 
             animator.SetTrigger("Surprised");
-            enemyGFX.localScale = new Vector3(enemyGFX.localScale.x * 2, enemyGFX.localScale.x * 2, enemyGFX.localScale.x * 2);
+            //enemyGFX.localScale = new Vector3(enemyGFX.localScale.x * 2, enemyGFX.localScale.x * 2, enemyGFX.localScale.x * 2);
             hasSpottedPlayer = true;
         }
 
