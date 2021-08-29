@@ -417,7 +417,7 @@ MonoBehaviour:
   currentState: 0
   searchDistance: 90
   slowTime: 2
-  repairTime: 5
+  repairTime: 3
   destroyedLayer:
     serializedVersion: 2
     m_Bits: 4096
