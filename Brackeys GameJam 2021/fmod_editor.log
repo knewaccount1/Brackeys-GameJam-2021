@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000029A0D02EE18 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000234B14D2F38 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -18,39 +18,282 @@
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000029AB7D71188
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000029AB7D71188
-[LOG] SoundI::release                          :  (0000029A1C71F298)
-[LOG] SoundI::release                          :     announcement_226-210828_1527-glued-01 (0000029A0FC28EF8)
-[LOG] SoundI::release                          :  (0000029A1C71F128)
-[LOG] SoundI::release                          :     announcement_226-210828_1527-glued-08 (0000029A0FC28D58)
-[LOG] SoundI::release                          :  (0000029A1C71FCA8)
-[LOG] SoundI::release                          :     announcement_226-210828_1527-glued-06 (0000029A0FC28BB8)
-[LOG] SoundI::release                          :  (00000299CB854278)
-[LOG] SoundI::release                          :     announcement_226-210828_1527-glued (00000298644D2DC8)
-[LOG] SoundI::release                          :  (0000029A1C71EFB8)
-[LOG] SoundI::release                          :     announcement_226-210828_1527-glued-04 (0000029A0FC28A18)
-[LOG] SoundI::release                          :  (00000298637D64B8)
-[LOG] SoundI::release                          :     announcement_226-210828_1527-glued-02 (00000298644D2C28)
-[LOG] SoundI::release                          :  (0000029A1C71F9C8)
-[LOG] SoundI::release                          :     announcement_226-210828_1527-glued-05 (00000298644D2748)
-[LOG] SoundI::release                          : Supermarket_BGM_0.1 (0000029A03B7E608)
-[LOG] SoundI::release                          :     Supermarket_BGM_0.1 (0000029AB81E2578)
-[LOG] SoundI::release                          :     Supermarket_BGM_0.1 (0000029AB7D71188)
-[LOG] SoundI::release                          :  (00000299CB8546C8)
-[LOG] SoundI::release                          :     customer_announcement (00000298644D2268)
-[LOG] SoundI::release                          :  (00000298637D5EF8)
-[LOG] SoundI::release                          :     announcement_226-210828_1527-glued-07 (00000298644D2408)
-[LOG] SoundI::release                          :  (00000299CB854558)
-[LOG] SoundI::release                          :     announcement_226-210828_1527-glued-10 (00000298644D20C8)
-[LOG] SoundI::release                          :  (0000029A1C71FB38)
-[LOG] SoundI::release                          :     announcement_226-210828_1527-glued-03 (0000029A0FC29098)
-[LOG] SoundI::release                          :  (0000029A1C71F578)
-[LOG] SoundI::release                          :     announcement_226-210828_1527-glued-09 (0000029A0FC293D8)
+[LOG] SystemI::createSound                     : filename = Assets/Sounds/FMOD Bank/Super Market 2/Build/Desktop/BGM.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000234AFC7C238 : node = 00000233FE6FCC70
+[LOG] SystemI::createSound                     : add node to async list : head = 00000234B52E1768.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000234AFC7C238
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/FMOD Bank/Super Market 2/Build/Desktop/BGM.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3028352
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4832
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000233FE6FCD80
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1880448
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Supermarket_BGM_0.1', format=5, channels=2, frequency=48000, lengthbytes=1356192, lengthpcm=4937142, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.631503.
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18848
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000A3ED26F4A8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->useropen           = 00007FFFC42560E0
+[LOG] SystemI::createSoundInternal             :     exinfo->userclose          = 00007FFFC42560B0
+[LOG] SystemI::createSoundInternal             :     exinfo->userread           = 00007FFFC42561B0
+[LOG] SystemI::createSoundInternal             :     exinfo->userseek           = 00007FFFC4256270
+[LOG] SystemI::createSoundInternal             :     exinfo->fileuserdata       = 00000233FDF9DEC8
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            :     register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             :     Sample 0/1: name='announcement_226-210828_1527-glued-07', format=5, channels=2, frequency=48000, lengthbytes=50656, lengthpcm=210651, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.107819.
+[LOG] SystemI::createSoundInternal             :     Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1880448
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18848
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000A3ED26F4A8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->useropen           = 00007FFFC42560E0
+[LOG] SystemI::createSoundInternal             :     exinfo->userclose          = 00007FFFC42560B0
+[LOG] SystemI::createSoundInternal             :     exinfo->userread           = 00007FFFC42561B0
+[LOG] SystemI::createSoundInternal             :     exinfo->userseek           = 00007FFFC4256270
+[LOG] SystemI::createSoundInternal             :     exinfo->fileuserdata       = 00000233FDF9DEC8
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            :     register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             :     Sample 0/1: name='announcement_226-210828_1527-glued-02', format=5, channels=2, frequency=48000, lengthbytes=71072, lengthpcm=293407, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.145660.
+[LOG] SystemI::createSoundInternal             :     Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1880448
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18848
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000A3ED26F4A8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000234AFC7C238
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFFC42560E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFFC42560B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFFC42561B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFFC4256270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000233FDF9DEC8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='announcement_226-210828_1527-glued', format=5, channels=2, frequency=48000, lengthbytes=44864, lengthpcm=184320, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.135559.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1880448
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 18848
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000A3ED26F4A8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFFC42560E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFFC42560B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFFC42561B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFFC4256270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000233FDF9DEC8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='announcement_226-210828_1527-glued-10', format=5, channels=2, frequency=48000, lengthbytes=44544, lengthpcm=178050, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.067566.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1880448
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 18848
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000A3ED26F4A8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFFC42560E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFFC42560B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFFC42561B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFFC4256270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000233FDF9DEC8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='customer_announcement', format=5, channels=2, frequency=48000, lengthbytes=28032, lengthpcm=184320, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.135437.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1880448
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 18848
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000A3ED26F4A8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFFC42560E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFFC42560B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFFC42561B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFFC4256270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000233FDF9DEC8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='announcement_226-210828_1527-glued-05', format=5, channels=2, frequency=48000, lengthbytes=85920, lengthpcm=338546, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.137390.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1880448
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 18848
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000A3ED26F4A8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFFC42560E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFFC42560B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFFC42561B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFFC4256270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000233FDF9DEC8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='announcement_226-210828_1527-glued-04', format=5, channels=2, frequency=48000, lengthbytes=57088, lengthpcm=238236, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.172119.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1880448
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 18848
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000A3ED26F4A8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFFC42560E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFFC42560B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFFC42561B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFFC4256270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000233FDF9DEC8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='announcement_226-210828_1527-glued-09', format=5, channels=2, frequency=48000, lengthbytes=66624, lengthpcm=275853, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.102570.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1880448
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 18848
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000A3ED26F4A8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFFC42560E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFFC42560B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFFC42561B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFFC4256270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000233FDF9DEC8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='announcement_226-210828_1527-glued-06', format=5, channels=2, frequency=48000, lengthbytes=91232, lengthpcm=373655, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.167755.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1880448
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 18848
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000A3ED26F4A8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFFC42560E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFFC42560B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFFC42561B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFFC4256270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000233FDF9DEC8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='announcement_226-210828_1527-glued-08', format=5, channels=2, frequency=48000, lengthbytes=43840, lengthpcm=178050, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.208832.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1880448
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 18848
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000A3ED26F4A8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFFC42560E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFFC42560B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFFC42561B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFFC4256270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000233FDF9DEC8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='announcement_226-210828_1527-glued-01', format=5, channels=2, frequency=48000, lengthbytes=49600, lengthpcm=199366, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.126343.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1880448
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 18848
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000A3ED26F4A8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFFC42560E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFFC42560B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFFC42561B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFFC4256270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000233FDF9DEC8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='announcement_226-210828_1527-glued-03', format=5, channels=2, frequency=48000, lengthbytes=48448, lengthpcm=198112, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.187347.
+[LOG] SoundI::release                          : title_jazz_loop (00000234AFC73988)
+[LOG] SoundI::release                          :     title_jazz_loop (00000234876AEEC8)
+[LOG] SoundI::release                          :     title_jazz_loop (00000234B9025F78)
+[LOG] SoundI::release                          : Supermarket_BGM_0.1 (00000234AFC7C238)
+[LOG] SoundI::release                          :     Supermarket_BGM_0.1 (00000233D1AFF1B8)
+[LOG] SoundI::release                          :     Supermarket_BGM_0.1 (00000234241AA578)
+[LOG] SystemI::createSound                     : filename = Assets/Sounds/FMOD Bank/Super Market 2/Build/Desktop/BGM.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000234AFC78068 : node = 00000233FE6FA1F0
+[LOG] SystemI::createSound                     : add node to async list : head = 00000234B52E1768.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000234AFC78068
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/FMOD Bank/Super Market 2/Build/Desktop/BGM.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3028352
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4832
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000233FE6FA300
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='lose', format=5, channels=2, frequency=48000, lengthbytes=192256, lengthpcm=771134, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.405914.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000234AFC78068
+[LOG] SystemI::createSound                     : filename = Assets/Sounds/FMOD Bank/Super Market 2/Build/Desktop/BGM.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000234AFC72C08 : node = 00000233FE6FB230
+[LOG] SystemI::createSound                     : add node to async list : head = 00000234B52E1768.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000234AFC72C08
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Sounds/FMOD Bank/Super Market 2/Build/Desktop/BGM.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3028352
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4832
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000233FE6FB340
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='title_jazz_loop', format=5, channels=2, frequency=48000, lengthbytes=381504, lengthpcm=1282716, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.557648.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000234AFC72C08
+[LOG] SoundI::release                          : lose (00000234AFC78068)
+[LOG] SoundI::release                          :     lose (00000233D1AFE7F8)
+[LOG] SoundI::release                          :     lose (00000234241AA578)
+[LOG] SoundI::release                          :  (00000234B002B0C8)
+[LOG] SoundI::release                          :     announcement_226-210828_1527-glued-01 (00000234B9AEF888)
+[LOG] SoundI::release                          :  (00000234B002A998)
+[LOG] SoundI::release                          :     announcement_226-210828_1527-glued-08 (00000234B9AEFBC8)
+[LOG] SoundI::release                          :  (00000234B002A548)
+[LOG] SoundI::release                          :     announcement_226-210828_1527-glued-06 (00000234B9AEFD68)
+[LOG] SoundI::release                          :  (00000234B002A828)
+[LOG] SoundI::release                          :     announcement_226-210828_1527-glued (00000233D2031238)
+[LOG] SoundI::release                          :  (00000234B002AF58)
+[LOG] SoundI::release                          :     announcement_226-210828_1527-glued-04 (00000234B9AEF6E8)
+[LOG] SoundI::release                          :  (00000234B002BDB8)
+[LOG] SoundI::release                          :     announcement_226-210828_1527-glued-02 (00000233D20313D8)
+[LOG] SoundI::release                          :  (00000234B002A3D8)
+[LOG] SoundI::release                          :     announcement_226-210828_1527-glued-05 (00000234B9AEF548)
+[LOG] SoundI::release                          : title_jazz_loop (00000234AFC72C08)
+[LOG] SoundI::release                          :     title_jazz_loop (00000233D1AFD7B8)
+[LOG] SoundI::release                          :     title_jazz_loop (00000234B58CC748)
+[LOG] SoundI::release                          :  (00000234B002A268)
+[LOG] SoundI::release                          :     customer_announcement (00000234B9AEFA28)
+[LOG] SoundI::release                          :  (00000234B002B688)
+[LOG] SoundI::release                          :     announcement_226-210828_1527-glued-07 (00000233D2031098)
+[LOG] SoundI::release                          :  (00000234B002AB08)
+[LOG] SoundI::release                          :     announcement_226-210828_1527-glued-10 (00000233D2031578)
+[LOG] SoundI::release                          :  (00000233C4D15B38)
+[LOG] SoundI::release                          :     announcement_226-210828_1527-glued-03 (00000234B9AEF3A8)
+[LOG] SoundI::release                          :  (00000234B002ADE8)
+[LOG] SoundI::release                          :     announcement_226-210828_1527-glued-09 (00000234B9AEF208)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients

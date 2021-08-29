@@ -4,7 +4,6 @@ using UnityEngine;
 using DG.Tweening;
 using FMODUnity;
 using FMOD;
-
 public class Interactable : MonoBehaviour
 {
     private GameManager GM;
@@ -76,7 +75,7 @@ public class Interactable : MonoBehaviour
 
 
 
-            UnityEngine.Debug.Log(GM.destroyedInteractables % 10);
+
             if (GM.destroyedInteractables % 10 == 0)
             {
                 Vector2 spawnPoint = boxBounds.RandomPointInBounds();
@@ -114,7 +113,7 @@ public class Interactable : MonoBehaviour
             isDamaged = true;
 
             //Add audio sprite change logic here;
-            // FMODUnity.RuntimeManager.PlayOneShot(SFX, transform.position);
+            FMODUnity.RuntimeManager.PlayOneShot(SFX, transform.position);
         }
 
     }

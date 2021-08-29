@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            FMODUnity.RuntimeManager.PlayOneShot(announcementEvent, transform.position);
+            //FMODUnity.RuntimeManager.PlayOneShot(announcementEvent, transform.position);
         }
 
         if (Input.GetKey(KeyCode.Alpha0))
