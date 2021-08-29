@@ -131,6 +131,7 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
+        bgm.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         SceneManager.LoadScene(2);
     }
 
@@ -150,5 +151,6 @@ public class GameManager : MonoBehaviour
         bgm.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         SceneManager.LoadScene(0);
     }
+
 
 }

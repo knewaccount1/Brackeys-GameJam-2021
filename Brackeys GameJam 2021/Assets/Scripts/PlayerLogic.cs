@@ -22,7 +22,7 @@ public class PlayerLogic : MonoBehaviour
     public bool canTackle;
 
     private GameManager GM;
-
+    public ParticleSystem speedAura;
     [SerializeField][Range (0.1f,5)] private float tackleAccTime;
     [SerializeField][Range (-1,6)] private float tackleDistMul;
 
@@ -136,6 +136,8 @@ public class PlayerLogic : MonoBehaviour
         moveSpeed = origMoveSPeed * 1.3f;
         Sequence moveSpeedSeq = DOTween.Sequence();
         moveSpeedSeq.Insert(0f, DOVirtual.DelayedCall(speedBoostDuration ,BoostSpeedEnd));
+        speedAura.gameObject.SetActive(true);
+
     }
     public void BoostTime()
     {
@@ -143,6 +145,7 @@ public class PlayerLogic : MonoBehaviour
     }
     private void BoostSpeedEnd()
     {
+        speedAura.gameObject.SetActive(false);
         moveSpeed = origMoveSPeed;
     }
 
