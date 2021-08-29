@@ -135,7 +135,7 @@ MonoBehaviour:
   - {fileID: 4238528098222812650, guid: 7850b8f0fc8b5e844bc6f53276ab14ce, type: 3}
   damagedSprite: {fileID: -1765553930343221372, guid: 3ff2f0011a691c146983ec95a44aac48, type: 3}
   powerUpPrefab: {fileID: 6025964557383520077, guid: 96855ef7226b7dc4eb6d761f8f28e76e, type: 3}
-  speedBoostPrefab: {fileID: 1562747765685952203, guid: 3579dac06b6a5734bb53bc432779d309, type: 3}
+  speedBoostPrefab: {fileID: 0}
   boostSpawner: {fileID: 3098122923903319335}
   SFX: event:/
 --- !u!61 &3098122922612587607
