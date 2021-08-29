@@ -1219,18 +1219,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Artist person, named Sara, doing artist things, like UI.
+  m_Text: 'Name: Slykk
 
-    There''s
-    a portfolio somewhere on the internet *Link*
-
-'
+    Tasks: Programming'
 --- !u!222 &154362144
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3291,7 +3288,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -6345,16 +6342,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Artist person, named Sara, doing artist things, like UI.
+  m_Text: 'Name: Edwin Dizer
 
-    There''s
-    a portfolio somewhere on the internet *Link*
+    Tasks: Sound design
 
 '
 --- !u!222 &1299648019
@@ -8149,7 +8145,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
