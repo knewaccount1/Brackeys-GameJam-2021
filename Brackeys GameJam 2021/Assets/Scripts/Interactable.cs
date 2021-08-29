@@ -52,7 +52,7 @@ public class Interactable : MonoBehaviour
         GM.destroyedInteractables--;
         isDamaged = false;
         sr.sprite = originalSprite;
-
+        GetComponent<Collider2D>().isTrigger = false;
         gameObject.layer = 10;
         //Swap sprites here. Play audio here.
     }
@@ -64,9 +64,11 @@ public class Interactable : MonoBehaviour
         {
             //Stop tackle animation and/or start tackle hit animation
             BoxBounds boxBounds = boostSpawner.GetComponentInChildren<BoxBounds>();
-            
-            
-            
+            GM.destroyedInteractables++;
+            GM.AddScore(10);
+
+            GetComponent<Collider2D>().isTrigger = true;
+
             // Time Boost Drop
             if (true)
             //if (Random.Range(0,1) >= 0.75)

@@ -137,6 +137,10 @@ public class PlayerLogic : MonoBehaviour
         Sequence moveSpeedSeq = DOTween.Sequence();
         moveSpeedSeq.Insert(0f, DOVirtual.DelayedCall(speedBoostDuration ,BoostSpeedEnd));
     }
+    public void BoostTime()
+    {
+        GM.AddTime();
+    }
     private void BoostSpeedEnd()
     {
         moveSpeed = origMoveSPeed;
@@ -213,30 +217,41 @@ public class PlayerLogic : MonoBehaviour
     {
         if (moveDirection == Vector3.up)
         {
-            playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Back", typeof(Sprite));
+            //playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Back", typeof(Sprite));
+
+            playerAnimator.Play("kid back anim");
+
             playerSpriteRenderer.flipX = false;
-            playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite back_0") as RuntimeAnimatorController;
+            //playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite back_0") as RuntimeAnimatorController;
         }
         else if (moveDirection == Vector3.down)
         {
-            playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Front", typeof(Sprite));
+            //playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Front", typeof(Sprite));
+
+            playerAnimator.Play("kid front anim");
+
+
             playerSpriteRenderer.flipX = false;
-            playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite front_0") as RuntimeAnimatorController;
+            //playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite front_0") as RuntimeAnimatorController;
         }
         else if (moveDirection == Vector3.left)
         {
-            playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Left", typeof(Sprite));
+           //playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Left", typeof(Sprite));
+
+            playerAnimator.Play("kid side anim");
             playerSpriteRenderer.flipX = false;
-            playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite side_0") as RuntimeAnimatorController;
+            //playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite side_0") as RuntimeAnimatorController;
         }
         else if(moveDirection == Vector3.right)
         {
-            playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Left", typeof(Sprite));
+            //playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Left", typeof(Sprite));
+            playerAnimator.Play("kid side anim");
             playerSpriteRenderer.flipX = true;
-            playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite side_0") as RuntimeAnimatorController;
+            //playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite side_0") as RuntimeAnimatorController;
         }
         else
         {
+            playerAnimator.Play("kid idle anim");
             //do nothing
         }
 

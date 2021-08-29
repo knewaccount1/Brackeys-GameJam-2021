@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     private float timer;
 
     public int maxTime;
+    public int timePerBoost;
 
     [HideInInspector]public Player playerRef;
 
@@ -102,9 +103,20 @@ public class GameManager : MonoBehaviour
         timer -= Time.deltaTime;
         seconds = (int)timer;
 
-        timerText.text = seconds + " sec";
+        timerText.text = "Time: " +seconds;
+        scoreText.text = "Score: " + score;
+        
         //Updating FMOD Timer
         bgm.setParameterByID(bgmTimerID, (float)seconds/maxTime);
+    }
+
+    public void AddScore(int i)
+    {
+        score += i;
+    }
+    public void AddTime()
+    {
+        timer += timePerBoost;
     }
 
     public void CheckWinCondition()
@@ -117,5 +129,25 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void EndGame()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 
 }
