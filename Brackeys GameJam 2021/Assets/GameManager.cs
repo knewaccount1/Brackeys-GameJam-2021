@@ -108,6 +108,12 @@ public class GameManager : MonoBehaviour
         
         //Updating FMOD Timer
         bgm.setParameterByID(bgmTimerID, (float)seconds/maxTime);
+
+
+        if(seconds <= 0)
+        {
+            EndGame();
+        }
     }
 
     public void AddScore(int i)
