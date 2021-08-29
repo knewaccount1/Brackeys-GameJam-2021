@@ -88,6 +88,26 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &-8959176220945131727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Sounds/FMOD Bank/Super Market 2/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 637657799040000000
+  FileSizes:
+  - Name: Desktop
+    Value: 1899296
+  Exists: 1
 --- !u!114 &-8950638329142467442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,6 +218,48 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-8380318860290581674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM/Timer
+  m_EditorClassIdentifier: 
+  Name: Timer
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
+--- !u!114 &-8339036864689198964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Sounds/FMOD Bank/Super Market 2/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637657799040000000
+  FileSizes:
+  - Name: Desktop
+    Value: 1012
+  Exists: 1
 --- !u!114 &-8251610724417947565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,6 +348,48 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &-8178115046850584386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/BGM.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Sounds/FMOD Bank/Super Market 2/Build/Desktop/BGM.bank
+  Name: BGM
+  StudioPath: bank:/BGM
+  lastModified: 637657799040000000
+  FileSizes:
+  - Name: Desktop
+    Value: 3033184
+  Exists: 1
+--- !u!114 &-8168357764940467248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM/Timer
+  m_EditorClassIdentifier: 
+  Name: Timer
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-8141303788241134142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,7 +673,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 788
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7540115467546625246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -812,6 +916,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-7063102506297794940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D SFX/footsteps_mother
+  m_EditorClassIdentifier: 
+  Path: event:/3D SFX/footsteps_mother
+  guid: 974753fa1cf1624e8551a2eb01842fbf
+  Banks:
+  - {fileID: -8959176220945131727}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7784
 --- !u!114 &-7036977786621602350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -834,6 +961,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &-6995144796585962097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/title_jazz_loop
+  m_EditorClassIdentifier: 
+  Path: event:/Music/title_jazz_loop
+  guid: 01f9bc80596d2645afbf90fe36270203
+  Banks:
+  - {fileID: -8178115046850584386}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 26723
 --- !u!114 &-6974500469203882014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1010,6 +1160,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-6138614107721040316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/lose
+  m_EditorClassIdentifier: 
+  Path: event:/Music/lose
+  guid: 08384abafe2348489084a1f19a9d64fb
+  Banks:
+  - {fileID: -8178115046850584386}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 16065
 --- !u!114 &-6090372751039314036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1165,6 +1338,28 @@ MonoBehaviour:
   IsGlobal: 0
   Exists: 0
 --- !u!114 &-5956961483453252922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM/Timer
+  m_EditorClassIdentifier: 
+  Name: Timer
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
+--- !u!114 &-5955056433296138424
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2396,6 +2591,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &-3594169642355472281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/2D SFX/General
+  m_EditorClassIdentifier: 
+  Path: event:/2D SFX/General
+  guid: cb80f0a62e135940856d6d51d67da510
+  Banks:
+  - {fileID: -8959176220945131727}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-3538111752352950716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3339,7 +3557,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 2457696
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1597670757147815929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4101,16 +4319,27 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -7556805970444206052}
-  - {fileID: -1653300354809620347}
+  - {fileID: 4570207548467050155}
+  - {fileID: -8178115046850584386}
+  - {fileID: -8339036864689198964}
+  - {fileID: -8959176220945131727}
   EditorEvents:
-  - {fileID: 898371646509267684}
+  - {fileID: -6995144796585962097}
+  - {fileID: -6138614107721040316}
+  - {fileID: 5649237445511540282}
+  - {fileID: 866683499142376518}
+  - {fileID: -7063102506297794940}
+  - {fileID: -3594169642355472281}
+  - {fileID: 1399007118940199735}
+  - {fileID: 6145143644055302435}
+  - {fileID: 181494262704021117}
+  - {fileID: 1824663942455939254}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -1653300354809620347}
+  - {fileID: -8339036864689198964}
   StringsBanks:
-  - {fileID: -7556805970444206052}
-  stringsBankWriteTime: 637656698836457036
+  - {fileID: 4570207548467050155}
+  stringsBankWriteTime: 637657799040000000
   cacheVersion: 8
 --- !u!114 &52908448140327045
 MonoBehaviour:
@@ -4156,6 +4385,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &181494262704021117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/2D SFX/Announcements
+  m_EditorClassIdentifier: 
+  Path: event:/2D SFX/Announcements
+  guid: ecb114a7ca30a143af3274ed56144a35
+  Banks:
+  - {fileID: -8959176220945131727}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 7784
 --- !u!114 &280315087779937103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4442,6 +4694,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &866683499142376518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/2D SFX/footsteps_kid
+  m_EditorClassIdentifier: 
+  Path: event:/2D SFX/footsteps_kid
+  guid: 7e33d0f0d5c638469d2d44f166baa42f
+  Banks:
+  - {fileID: -8959176220945131727}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &898371646509267684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4456,13 +4731,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/BGM
   guid: 46d9c62151a21043a2454ffc75ee5d57
-  Banks:
-  - {fileID: -1653300354809620347}
+  Banks: []
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 5229411565318021513}
+  - {fileID: -8168357764940467248}
   MinDistance: 0
   MaxDistance: 0
   Length: 187951
@@ -4642,6 +4916,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &1399007118940199735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D SFX/Door
+  m_EditorClassIdentifier: 
+  Path: event:/3D SFX/Door
+  guid: cd810e44590a524e85c1104118f848e7
+  Banks:
+  - {fileID: -8959176220945131727}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1465672718240477439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4796,6 +5093,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &1824663942455939254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D SFX/footsteps_employee
+  m_EditorClassIdentifier: 
+  Path: event:/3D SFX/footsteps_employee
+  guid: ff4b1a932da4ad4d87c0fb3e519abc50
+  Banks:
+  - {fileID: -8959176220945131727}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5564
 --- !u!114 &1946666536102360945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5896,6 +6216,26 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &4570207548467050155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Sounds/FMOD Bank/Super Market 2/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637657799040000000
+  FileSizes:
+  - Name: Desktop
+    Value: 1312
+  Exists: 1
 --- !u!114 &4578070080154498934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6401,7 +6741,7 @@ MonoBehaviour:
     data2: 0
   Type: 0
   IsGlobal: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &5265569318063751670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6600,6 +6940,30 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &5649237445511540282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/BGM
+  m_EditorClassIdentifier: 
+  Path: event:/Music/BGM
+  guid: 46d9c62151a21043a2454ffc75ee5d57
+  Banks:
+  - {fileID: -8178115046850584386}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -8380318860290581674}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 187951
 --- !u!114 &5699368469379669006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6732,6 +7096,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &6145143644055302435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/2D SFX/Shelf
+  m_EditorClassIdentifier: 
+  Path: event:/2D SFX/Shelf
+  guid: e1923e0adfc43f4c89dd45e6fc0fd1a5
+  Banks:
+  - {fileID: -8959176220945131727}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &6150941418624649306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7260,6 +7647,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &7298353320529578722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM/Timer
+  m_EditorClassIdentifier: 
+  Name: Timer
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &7357162974213940299
 MonoBehaviour:
   m_ObjectHideFlags: 0

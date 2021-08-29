@@ -45,6 +45,9 @@ public class GameManager : MonoBehaviour
     FMOD.Studio.EventInstance bgm;
     FMOD.Studio.PARAMETER_ID bgmTimerID;
 
+    public string announcementEvent = "event:/Announcement";
+    FMOD.Studio.EventInstance announcements;
+
     [Header("Debug Parameters")]
     public int seconds;
 
@@ -60,7 +63,9 @@ public class GameManager : MonoBehaviour
 
         //FMOD Initializing
         bgm = FMODUnity.RuntimeManager.CreateInstance(bgmEvent);
+        announcements = FMODUnity.RuntimeManager.CreateInstance(announcementEvent);
         bgm.start();
+
 
         FMOD.Studio.EventDescription bgmTimerDescription;
         bgm.getDescription(out bgmTimerDescription);
@@ -71,6 +76,7 @@ public class GameManager : MonoBehaviour
 
         //Cinemachine rigging
         noise = vCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
     }
 
     public void ShakeCam()
@@ -94,6 +100,10 @@ public class GameManager : MonoBehaviour
             
         }
 
+        if (Input.GetKey(KeyCode.Space))
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(announcementEvent, transform.position);
+        }
 
         if (Input.GetKey(KeyCode.Alpha0))
         {
