@@ -37,7 +37,14 @@ public class PlayerLogic : MonoBehaviour
     [Header("FMOD")]
     public string powerUpEvent;
     public string dashEvent;
+    public string[] footstepEvent;
 
+    public void PlayFootstep()
+    {
+        int i = Random.Range(0, footstepEvent.Length);
+        FMODUnity.RuntimeManager.PlayOneShot(footstepEvent[i], transform.position);
+
+    }
 
     void Awake()
     {

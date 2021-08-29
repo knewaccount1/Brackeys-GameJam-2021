@@ -170,6 +170,8 @@ GameObject:
   - component: {fileID: 7298804968487338175}
   - component: {fileID: 7298804968487338174}
   - component: {fileID: 7298804968487338177}
+  - component: {fileID: 5326786427678690195}
+  - component: {fileID: 8464603995023973334}
   m_Layer: 7
   m_Name: Enem GFX
   m_TagString: Untagged
@@ -261,6 +263,52 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5326786427678690195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7298804968487338172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 371bae05361df3243bda23a4c27b6984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepEvents:
+  - event:/footsteps/employee_footsteps-001
+  - event:/footsteps/employee_footsteps-002
+  - event:/footsteps/employee_footsteps-003
+  - event:/footsteps/employee_footsteps-004
+  - event:/footsteps/employee_footsteps-005
+  - event:/footsteps/employee_footsteps-006
+  - event:/footsteps/employee_footsteps-007
+  - event:/footsteps/employee_footsteps-008
+  - event:/footsteps/employee_footsteps-009
+  - event:/footsteps/employee_footsteps-010
+--- !u!114 &8464603995023973334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7298804968487338172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/footsteps/employee_footsteps-001
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7298804969558423917
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,6 +463,7 @@ MonoBehaviour:
   animator: {fileID: 7298804968487338177}
   triggerCollider: {fileID: 7298804967764335883}
   currentState: 0
+  footStepEvents: []
   searchDistance: 90
   slowTime: 2
   repairTime: 3

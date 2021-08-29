@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 8308212206902207986}
   - component: {fileID: 8308212206902207987}
   - component: {fileID: 8308212206902207884}
+  - component: {fileID: 3193962352706230144}
   m_Layer: 7
   m_Name: Enem GFX
   m_TagString: Untagged
@@ -261,6 +262,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3193962352706230144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8308212206902207985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 371bae05361df3243bda23a4c27b6984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepEvents:
+  - event:/footsteps/employee_footsteps-001
+  - event:/footsteps/employee_footsteps-002
+  - event:/footsteps/employee_footsteps-003
+  - event:/footsteps/employee_footsteps-004
+  - event:/footsteps/employee_footsteps-005
+  - event:/footsteps/employee_footsteps-006
+  - event:/footsteps/employee_footsteps-007
+  - event:/footsteps/employee_footsteps-008
+  - event:/footsteps/employee_footsteps-009
+  - event:/footsteps/employee_footsteps-010
 --- !u!1 &8308212207960824864
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,4 +439,5 @@ MonoBehaviour:
   animator: {fileID: 8308212206902207884}
   triggerCollider: {fileID: 8308212205929642054}
   currentState: 0
+  footStepEvents: []
   slowDuration: 2

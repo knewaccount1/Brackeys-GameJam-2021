@@ -61,6 +61,10 @@ public class EnemyAI : MonoBehaviour
     //public AudioClip swingSound;
 
     public EnemyState currentState;
+
+    [Header("FMOD")]
+    public string[] footStepEvents;
+
     public enum EnemyState
     {
         INITIALIZING,
@@ -74,6 +78,8 @@ public class EnemyAI : MonoBehaviour
         
     }
 
+
+    
     private void Awake()
     {
         target = FindObjectOfType<PlayerLogic>().transform;

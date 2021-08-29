@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{08a570e0-5cfc-425e-9ec6-1a090cc932d7}">
+		<property name="assetPath">
+			<value>open_door.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.063673469387755</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{73b19a10-a478-4f29-a89b-363d7c61775c}</destination>
+		</relationship>
+	</object>
+</objects>

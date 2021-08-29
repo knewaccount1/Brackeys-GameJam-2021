@@ -21436,6 +21436,7 @@ MonoBehaviour:
   animator: {fileID: 587153904}
   triggerCollider: {fileID: 0}
   currentState: 0
+  footStepEvents: []
   slowDuration: 0
 --- !u!114 &587153901
 MonoBehaviour:
@@ -33819,7 +33820,7 @@ MonoBehaviour:
   shakeTime: 0.8
   scoreText: {fileID: 142600050}
   timerText: {fileID: 2114536997}
-  bgmEvent: event:/Music/BGM
+  bgmEvent: event:/Supermarket_BGM_1
   announcementEvent:
   - event:/2D SFX/announcement1
   - event:/2D SFX/announcement2
@@ -33861,7 +33862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/2D SFX/shelf_impact
+  Event: event:/Supermarket_BGM_1
   PlayEvent: 1
   StopEvent: 0
   AllowFadeout: 1
@@ -34687,6 +34688,7 @@ GameObject:
   - component: {fileID: 909775905}
   - component: {fileID: 909775904}
   - component: {fileID: 909775909}
+  - component: {fileID: 909775910}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -34758,6 +34760,25 @@ MonoBehaviour:
   isStunned: 0
   powerUpEvent: event:/2D SFX/energy_drink
   dashEvent: event:/2D SFX/dash
+  footstepEvent:
+  - event:/footsteps/footsteps_kid-001
+  - event:/footsteps/footsteps_kid-002
+  - event:/footsteps/footsteps_kid-003
+  - event:/footsteps/footsteps_kid-004
+  - event:/footsteps/footsteps_kid-005
+  - event:/footsteps/footsteps_kid-006
+  - event:/footsteps/footsteps_kid-007
+  - event:/footsteps/footsteps_kid-008
+  - event:/footsteps/footsteps_kid-009
+  - event:/footsteps/footsteps_kid-010
+  - event:/footsteps/footsteps_kid-011
+  - event:/footsteps/footsteps_kid-012
+  - event:/footsteps/footsteps_kid-013
+  - event:/footsteps/footsteps_kid-014
+  - event:/footsteps/footsteps_kid-015
+  - event:/footsteps/footsteps_kid-016
+  - event:/footsteps/footsteps_kid-017
+  - event:/footsteps/footsteps_kid-018
 --- !u!212 &909775907
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34844,6 +34865,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &909775910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909775903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/footsteps/footsteps_kid-001
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &910858610
 GameObject:
   m_ObjectHideFlags: 0
@@ -39141,6 +39185,7 @@ MonoBehaviour:
   animator: {fileID: 1044214320}
   triggerCollider: {fileID: 0}
   currentState: 0
+  footStepEvents: []
   slowDuration: 0
 --- !u!50 &1044214322
 Rigidbody2D:
@@ -45081,6 +45126,7 @@ MonoBehaviour:
   animator: {fileID: 2015271100}
   triggerCollider: {fileID: 171473561}
   currentState: 0
+  footStepEvents: []
 --- !u!50 &1201852391
 Rigidbody2D:
   serializedVersion: 4
@@ -54658,6 +54704,7 @@ MonoBehaviour:
   animator: {fileID: 1792678535}
   triggerCollider: {fileID: 260471039}
   currentState: 0
+  footStepEvents: []
 --- !u!50 &1445818181
 Rigidbody2D:
   serializedVersion: 4
@@ -75360,6 +75407,7 @@ GameObject:
   - component: {fileID: 2015271099}
   - component: {fileID: 2015271101}
   - component: {fileID: 2015271100}
+  - component: {fileID: 2015271102}
   m_Layer: 7
   m_Name: Enem GFX
   m_TagString: Untagged
@@ -75451,6 +75499,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2015271102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015271098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 371bae05361df3243bda23a4c27b6984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepEvents:
+  - event:/footsteps/mother_footsteps-001
+  - event:/footsteps/mother_footsteps-002
+  - event:/footsteps/mother_footsteps-003
+  - event:/footsteps/mother_footsteps-004
+  - event:/footsteps/mother_footsteps-005
+  - event:/footsteps/mother_footsteps-006
+  - event:/footsteps/mother_footsteps-007
+  - event:/footsteps/mother_footsteps-008
+  - event:/footsteps/mother_footsteps-009
 --- !u!1 &2016424567
 GameObject:
   m_ObjectHideFlags: 0
