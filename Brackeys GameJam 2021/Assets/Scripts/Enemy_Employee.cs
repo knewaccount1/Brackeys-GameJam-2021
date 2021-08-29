@@ -13,6 +13,7 @@ public class Enemy_Employee : EnemyAI
     public LayerMask destroyedLayer;
     public Interactable interactableToRepair;
     [SerializeField] Collider2D[] hit2D;
+    public GameObject hammer;
 
     
 
@@ -196,8 +197,9 @@ public class Enemy_Employee : EnemyAI
         //Repair the object here
 
         timeRepairing -= Time.deltaTime;
+        hammer.SetActive(true);
 
-        if(timeRepairing <= 0)
+        if (timeRepairing <= 0)
         {
             interactableToRepair.RepairObject();
             timeRepairing = repairTime;
@@ -206,6 +208,7 @@ public class Enemy_Employee : EnemyAI
 
         if (!interactableToRepair.isDamaged)
         {
+            hammer.SetActive(false);
             target = playerRef;
             currentState = EnemyState.IDLE;
         }
@@ -217,7 +220,7 @@ public class Enemy_Employee : EnemyAI
         if (collision.CompareTag("Player"))
         {
             
-            collision.GetComponentInParent<PlayerLogic>().SlowEffect(slowTime);
+            //collision.GetComponentInParent<PlayerLogic>().SlowEffect(slowTime);
         }
     }
 }

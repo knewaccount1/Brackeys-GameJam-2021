@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy_Aggressive : EnemyAI
 {
     [Header("Aggressive Unit Specific Parameters")]
-    public float stunDuration;
+    public float slowDuration;
 
     public override void Idle()
     {
@@ -47,8 +47,31 @@ public class Enemy_Aggressive : EnemyAI
         AStarPathFinding();
 
         float distanceDelta = Vector3.Distance(transform.position, target.transform.position);
-     
-        if(distanceDelta > chaseDistance)
+
+        //Animation Spaghetti code
+        Vector2 posDelta = target.transform.position - transform.position;
+        if (Mathf.Abs(posDelta.x) < 3)
+        {
+            if (posDelta.y >= 2)
+            {
+                animator.Play("employee back anim");
+            }
+            else if (posDelta.y <= -2)
+            {
+                animator.Play("employee front anim");
+            }
+            else
+            {
+                animator.Play("employee side anim");
+            }
+        }
+        else
+        {
+
+            animator.Play("employee side anim");
+        }
+
+        if (distanceDelta > chaseDistance)
         {
             if(timeBeforeIdleCountdown <= 0)
             {
@@ -76,7 +99,7 @@ public class Enemy_Aggressive : EnemyAI
         if (collision.CompareTag("Player"))
         {
 
-            collision.GetComponentInParent<PlayerLogic>().StunEffect(stunDuration);
+            collision.GetComponentInParent<PlayerLogic>().SlowEffect(slowDuration);
         }
     }
 

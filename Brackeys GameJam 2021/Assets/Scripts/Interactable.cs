@@ -49,7 +49,7 @@ public class Interactable : MonoBehaviour
     public void RepairObject()
     {
         UnityEngine.Debug.Log("Employee repaired object");
-        GM.destroyedInteractables--;
+        //GM.destroyedInteractables--;
         isDamaged = false;
         sr.sprite = originalSprite;
         GetComponent<Collider2D>().isTrigger = false;
@@ -67,11 +67,17 @@ public class Interactable : MonoBehaviour
             GM.destroyedInteractables++;
             GM.AddScore(10);
 
+
             GetComponent<Collider2D>().isTrigger = true;
 
             // Time Boost Drop
-            if (true)
-            //if (Random.Range(0,1) >= 0.75)
+
+            float i = Random.Range(0f, 1f);
+
+
+
+            UnityEngine.Debug.Log(GM.destroyedInteractables % 10);
+            if (GM.destroyedInteractables % 10 == 0)
             {
                 Vector2 spawnPoint = boxBounds.RandomPointInBounds();
                 Transform powerUp = Instantiate((GameObject)Resources.Load("Prefabs/Time", typeof(GameObject)), spawnPoint, Quaternion.identity).transform;

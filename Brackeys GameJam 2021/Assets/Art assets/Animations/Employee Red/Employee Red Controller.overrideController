@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Employee Red Controller
+  m_Controller: {fileID: 9100000, guid: 9c3b844646d633147bae6c931e5a736a, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 166b79bacd4cb8c4ba6370b44714023d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5d7c49b863e3cb54888181e3ce0d5351, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: dba4268fb4bcbf54aa7986df114a3de8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 36a33b18bc1ebf548a4ee27d3480c5f5, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 675fac32206c09c4f8794d9e4218710b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: fe50193247d29c54db9706dba0a31234, type: 2}
