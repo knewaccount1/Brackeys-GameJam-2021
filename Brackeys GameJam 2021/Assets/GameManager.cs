@@ -147,6 +147,7 @@ public class GameManager : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
+        bgm.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         SceneManager.LoadScene(0);
     }
 
