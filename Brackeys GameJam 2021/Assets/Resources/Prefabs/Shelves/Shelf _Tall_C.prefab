@@ -131,6 +131,9 @@ MonoBehaviour:
   - event:/2D SFX/shelf_impact
   - event:/2D SFX/shelf_impact2
   - event:/2D SFX/shelf_impact3
+  SFX2:
+  - event:/2D SFX/shelf_cans
+  - event:/2D SFX/shelf_cans2
 --- !u!61 &3553541540765342828
 BoxCollider2D:
   m_ObjectHideFlags: 0

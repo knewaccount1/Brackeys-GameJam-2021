@@ -36,6 +36,8 @@ public class PlayerLogic : MonoBehaviour
 
     [Header("FMOD")]
     public string powerUpEvent;
+    public string dashEvent;
+
 
     void Awake()
     {
@@ -65,6 +67,7 @@ public class PlayerLogic : MonoBehaviour
             CheckMovement();
             if (Input.GetKeyDown(KeyCode.Space) && canTackle)
             {
+                FMODUnity.RuntimeManager.PlayOneShot(dashEvent, transform.position);
                 StartTackleSequence();
             }
         }

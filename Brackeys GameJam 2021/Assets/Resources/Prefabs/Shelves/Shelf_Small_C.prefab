@@ -59,6 +59,8 @@ MonoBehaviour:
   - event:/2D SFX/shelf_impact
   - event:/2D SFX/shelf_impact2
   - event:/2D SFX/shelf_impact3
+  SFX2:
+  - event:/2D SFX/shelf_vegetable3
 --- !u!61 &5123929779362811329
 BoxCollider2D:
   m_ObjectHideFlags: 0

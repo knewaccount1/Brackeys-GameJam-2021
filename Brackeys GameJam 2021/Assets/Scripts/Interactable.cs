@@ -24,6 +24,7 @@ public class Interactable : MonoBehaviour
 
     [Header("FMOD SFX")]
     public string[] SFX;
+    public string[] SFX2;
 
     private void Start()
     {
@@ -65,6 +66,7 @@ public class Interactable : MonoBehaviour
             BoxBounds boxBounds = boostSpawner.GetComponentInChildren<BoxBounds>();
             GM.destroyedInteractables++;
             GM.AddScore(10);
+
 
 
             GetComponent<Collider2D>().isTrigger = true;
@@ -113,8 +115,10 @@ public class Interactable : MonoBehaviour
             isDamaged = true;
 
             int j = Random.Range(0, SFX.Length);
+            int k = Random.Range(0, SFX2.Length);
             //Add audio sprite change logic here;
             FMODUnity.RuntimeManager.PlayOneShot(SFX[j], transform.position);
+            FMODUnity.RuntimeManager.PlayOneShot(SFX2[k], transform.position);
         }
 
     }

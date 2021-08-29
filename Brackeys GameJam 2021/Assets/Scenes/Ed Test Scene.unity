@@ -34757,6 +34757,7 @@ MonoBehaviour:
   tackleDistMul: 6
   isStunned: 0
   powerUpEvent: event:/2D SFX/energy_drink
+  dashEvent: event:/2D SFX/dash
 --- !u!212 &909775907
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -45057,7 +45058,7 @@ MonoBehaviour:
   target: {fileID: 0}
   playerRef: {fileID: 0}
   enemyGFX: {fileID: 2015271099}
-  speed: 0
+  speed: 4
   nextWaypointDistance: 1
   reachedEndOfPath: 0
   health: 3

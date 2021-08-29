@@ -136,6 +136,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(int i)
     {
         score += i;
+
     }
     public void AddTime()
     {
