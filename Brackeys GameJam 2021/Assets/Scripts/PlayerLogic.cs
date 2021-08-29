@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using FMOD;
+using FMODUnity;
 
 public class PlayerLogic : MonoBehaviour
 {
@@ -26,8 +28,14 @@ public class PlayerLogic : MonoBehaviour
     [SerializeField][Range (0.1f,5)] private float tackleAccTime;
     [SerializeField][Range (-1,6)] private float tackleDistMul;
 
+
+
+
     //Added by Ed to test Enemy AI. Can be changed/edited later
     [SerializeField] bool isStunned;
+
+    [Header("FMOD")]
+    public string powerUpEvent;
 
     void Awake()
     {
@@ -128,11 +136,12 @@ public class PlayerLogic : MonoBehaviour
         {
 
         }
-        Debug.LogWarning("I have collided!");
+
     }
 
     public void BoostSpeedStart(float speedBoostDuration)
     {
+        FMODUnity.RuntimeManager.PlayOneShot(powerUpEvent, transform.position);
         moveSpeed = origMoveSPeed * 1.3f;
         Sequence moveSpeedSeq = DOTween.Sequence();
         moveSpeedSeq.Insert(0f, DOVirtual.DelayedCall(speedBoostDuration ,BoostSpeedEnd));
@@ -174,7 +183,7 @@ public class PlayerLogic : MonoBehaviour
     private void EndTackleSequence()
     {
         isTackling = false;
-        Debug.LogWarning("I have called back!");
+  
     }
 
     private void HitAnimationEnded()
@@ -282,7 +291,6 @@ public class PlayerLogic : MonoBehaviour
     }
     IEnumerator SlowEffectCoroutine(float slowTimer)
     {
-        Debug.Log("collided with player");
 
         moveSpeed = origMoveSPeed / 3;
         yield return new WaitForSeconds(slowTimer);

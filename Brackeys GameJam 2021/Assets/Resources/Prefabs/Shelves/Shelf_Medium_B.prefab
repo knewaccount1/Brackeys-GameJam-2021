@@ -209,7 +209,10 @@ MonoBehaviour:
   powerUpPrefab: {fileID: 6025964557383520077, guid: 96855ef7226b7dc4eb6d761f8f28e76e, type: 3}
   speedBoostPrefab: {fileID: 0}
   boostSpawner: {fileID: 7605296153947933456}
-  SFX: event:/
+  SFX:
+  - event:/2D SFX/shelf_impact
+  - event:/2D SFX/shelf_impact2
+  - event:/2D SFX/shelf_impact3
 --- !u!61 &7605296155205241440
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -23,7 +23,7 @@ public class Interactable : MonoBehaviour
     public GameObject boostSpawner;
 
     [Header("FMOD SFX")]
-    public string SFX = "event:/";
+    public string[] SFX;
 
     private void Start()
     {
@@ -112,8 +112,9 @@ public class Interactable : MonoBehaviour
             gameObject.layer = 12;
             isDamaged = true;
 
+            int j = Random.Range(0, SFX.Length);
             //Add audio sprite change logic here;
-            FMODUnity.RuntimeManager.PlayOneShot(SFX, transform.position);
+            FMODUnity.RuntimeManager.PlayOneShot(SFX[j], transform.position);
         }
 
     }

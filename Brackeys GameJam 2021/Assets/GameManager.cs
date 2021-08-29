@@ -45,14 +45,16 @@ public class GameManager : MonoBehaviour
     FMOD.Studio.EventInstance bgm;
     FMOD.Studio.PARAMETER_ID bgmTimerID;
 
-    public string announcementEvent = "event:/Announcement";
-    FMOD.Studio.EventInstance announcements;
+    public string[] announcementEvent;
+    public float announcementTimer;
 
     [Header("Debug Parameters")]
     public int seconds;
 
     private void Start()
     {
+        announcementTimer = 10;
+
         timer = maxTime;
 
         playerRef = FindObjectOfType<Player>();
@@ -63,7 +65,7 @@ public class GameManager : MonoBehaviour
 
         //FMOD Initializing
         bgm = FMODUnity.RuntimeManager.CreateInstance(bgmEvent);
-        announcements = FMODUnity.RuntimeManager.CreateInstance(announcementEvent);
+
         bgm.start();
 
 
@@ -100,10 +102,6 @@ public class GameManager : MonoBehaviour
             
         }
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            //FMODUnity.RuntimeManager.PlayOneShot(announcementEvent, transform.position);
-        }
 
         if (Input.GetKey(KeyCode.Alpha0))
         {
@@ -123,6 +121,15 @@ public class GameManager : MonoBehaviour
         if(seconds <= 0)
         {
             EndGame();
+        }
+
+        announcementTimer -= Time.deltaTime;
+
+        if(announcementTimer <= 0)
+        {
+            int i = Random.Range(0, announcementEvent.Length);
+            FMODUnity.RuntimeManager.PlayOneShot(announcementEvent[i], transform.position);
+            announcementTimer = 30f;
         }
     }
 

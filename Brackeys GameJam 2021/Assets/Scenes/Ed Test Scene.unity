@@ -1841,7 +1841,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 34703714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.703912, y: 7.8136845, z: -10}
+  m_LocalPosition: {x: 3.7039063, y: 7.813834, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -33820,7 +33820,19 @@ MonoBehaviour:
   scoreText: {fileID: 142600050}
   timerText: {fileID: 2114536997}
   bgmEvent: event:/Music/BGM
-  announcementEvent: event:/2D SFX/Announcements
+  announcementEvent:
+  - event:/2D SFX/announcement1
+  - event:/2D SFX/announcement2
+  - event:/2D SFX/announcement3
+  - event:/2D SFX/announcement4
+  - event:/2D SFX/announcement5
+  - event:/2D SFX/announcement6
+  - event:/2D SFX/announcement7
+  - event:/2D SFX/announcement8
+  - event:/2D SFX/announcement9
+  - event:/2D SFX/announcement10
+  - event:/2D SFX/announcement11
+  announcementTimer: 10
   seconds: 0
 --- !u!4 &894177890
 Transform:
@@ -33849,7 +33861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/2D SFX/Announcements
+  Event: event:/2D SFX/shelf_impact
   PlayEvent: 1
   StopEvent: 0
   AllowFadeout: 1
@@ -34744,6 +34756,7 @@ MonoBehaviour:
   tackleAccTime: 0.37
   tackleDistMul: 6
   isStunned: 0
+  powerUpEvent: event:/2D SFX/energy_drink
 --- !u!212 &909775907
 SpriteRenderer:
   m_ObjectHideFlags: 0
