@@ -98,6 +98,7 @@ public class Enemy_Mom : EnemyAI
     {
         if (collision.CompareTag("Player"))
         {
+            GM.EndGame();
             Debug.Log("Player got captured by mother");
         }
     }
