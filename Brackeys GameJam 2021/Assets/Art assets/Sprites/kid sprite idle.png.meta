@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 78adcea3565e37c4db5af17687207891
+guid: f84ec4d8451f5ce488e621b6f0cabe6c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1254138648204199312
-    second: kid sprite back_0
+      213: -6003911164010066696
+    second: kid sprite idle_0
   - first:
-      213: 5435241367087951293
-    second: kid sprite back_1
+      213: -7194071047595536661
+    second: kid sprite idle_1
   - first:
-      213: -5927538902816923191
-    second: kid sprite back_2
+      213: 6259451596107740120
+    second: kid sprite idle_2
   - first:
-      213: -3096737492115482932
-    second: kid sprite back_3
+      213: -7774095444842267698
+    second: kid sprite idle_3
   - first:
-      213: -6210069471287313383
-    second: kid sprite back_4
+      213: -9152216581542360916
+    second: kid sprite idle_4
   - first:
-      213: -1589707973265969501
-    second: kid sprite back_5
+      213: -7367446024972461241
+    second: kid sprite idle_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,7 +106,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Windows Store Apps
     maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
@@ -118,7 +118,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Windows Store Apps
+    buildTarget: WebGL
     maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
@@ -133,7 +133,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kid sprite back_0
+      name: kid sprite idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -147,14 +147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07a33be4b87689ee0800000000000000
-      internalID: -1254138648204199312
+      spriteID: 8fc8d2e3b92ddaca0800000000000000
+      internalID: -6003911164010066696
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kid sprite back_1
+      name: kid sprite idle_1
       rect:
         serializedVersion: 2
         x: 160
@@ -168,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbd29c9e93bdd6b40800000000000000
-      internalID: 5435241367087951293
+      spriteID: bee452f7f76892c90800000000000000
+      internalID: -7194071047595536661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kid sprite back_2
+      name: kid sprite idle_2
       rect:
         serializedVersion: 2
         x: 320
@@ -189,14 +189,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c1e949f5c62dbda0800000000000000
-      internalID: -5927538902816923191
+      spriteID: 8d3f0ca001a0ed650800000000000000
+      internalID: 6259451596107740120
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kid sprite back_3
+      name: kid sprite idle_3
       rect:
         serializedVersion: 2
         x: 480
@@ -210,14 +210,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc692db78ad2605d0800000000000000
-      internalID: -3096737492115482932
+      spriteID: ecbb130c16ddc1490800000000000000
+      internalID: -7774095444842267698
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kid sprite back_4
+      name: kid sprite idle_4
       rect:
         serializedVersion: 2
         x: 640
@@ -231,14 +231,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91cfb6dd7b661d9a0800000000000000
-      internalID: -6210069471287313383
+      spriteID: ca84ab5728bccf080800000000000000
+      internalID: -9152216581542360916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kid sprite back_5
+      name: kid sprite idle_5
       rect:
         serializedVersion: 2
         x: 800
@@ -252,8 +252,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ae20ec550930f9e0800000000000000
-      internalID: -1589707973265969501
+      spriteID: 74b17abefd291c990800000000000000
+      internalID: -7367446024972461241
       vertices: []
       indices: 
       edges: []
