@@ -9,7 +9,7 @@ public class TimeBoost : PowerUp
         if (collision.CompareTag("Player"))
         {
             // give the player a speed boost
-            player.BoostSpeedStart(5f);
+            player.BoostTime();
 
             Destroy(gameObject);
         }
