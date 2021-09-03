@@ -119,7 +119,7 @@ public class PlayerLogic : MonoBehaviour
                 GM.ShakeCam();
                 Vector2 posDelta = transform.position - collider.transform.position;
                 posDelta.Normalize();
-                rb2D.AddForce(-moveDirection * 15f, ForceMode2D.Impulse);
+                rb2D.AddForce(-moveDirection * 10f, ForceMode2D.Impulse);
 
                 // -------------------THIS CODE MOVED TO INTERACTABLES CLASS--------------------
                 //Stop tackle animation and/or start tackle hit animation

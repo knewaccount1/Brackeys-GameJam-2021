@@ -18,6 +18,7 @@ public class Interactable : MonoBehaviour
     private Sprite originalSprite;
     public PowerUp powerUpPrefab;
     public SpeedBoost speedBoostPrefab;
+    public GameObject shadow;
 
     
     public GameObject boostSpawner;
@@ -30,7 +31,7 @@ public class Interactable : MonoBehaviour
     {
         GM = FindObjectOfType<GameManager>();
         rb2D = GetComponent<Rigidbody2D>();
-        sr = GetComponentInChildren<SpriteRenderer>();
+        sr = transform.Find("Sprite").GetComponent<SpriteRenderer>();
         originalSprite = sr.sprite;
     }
 
@@ -52,6 +53,10 @@ public class Interactable : MonoBehaviour
         //GM.destroyedInteractables--;
         isDamaged = false;
         sr.sprite = originalSprite;
+        if (shadow != null)
+        {
+                shadow.SetActive(true);
+        }
         GetComponent<Collider2D>().isTrigger = false;
         gameObject.layer = 10;
         //Swap sprites here. Play audio here.
@@ -97,6 +102,10 @@ public class Interactable : MonoBehaviour
 
 
             sr.sprite = damagedSprite;
+            if (shadow != null)
+            {
+                shadow.SetActive(false);
+            }
 
 
             //Vector2 posDelta = FindObjectOfType<PlayerLogic>().transform.position - transform.position;
