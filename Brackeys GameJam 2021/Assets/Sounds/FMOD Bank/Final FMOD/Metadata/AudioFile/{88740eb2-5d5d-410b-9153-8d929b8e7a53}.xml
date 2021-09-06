@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{88740eb2-5d5d-410b-9153-8d929b8e7a53}">
+		<property name="assetPath">
+			<value>footsteps_kid-009.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.36571428571428571</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{73b19a10-a478-4f29-a89b-363d7c61775c}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -23,6 +23,9 @@ public class PlayerLogic : MonoBehaviour
     public bool speedBoosted;
     public bool canTackle;
 
+    private Vector2 pushBackDirection;
+    private bool isPushedBack;
+
     private GameManager GM;
     public ParticleSystem speedAura;
     [SerializeField][Range (0.1f,5)] private float tackleAccTime;
@@ -69,7 +72,7 @@ public class PlayerLogic : MonoBehaviour
     void Update()
     {
         // Check movement and tackle here
-        if (!isTackling)
+        if (!isTackling && !isPushedBack)
         {
             CheckMovement();
             if (Input.GetKeyDown(KeyCode.Space) && canTackle)
@@ -89,7 +92,7 @@ public class PlayerLogic : MonoBehaviour
     void FixedUpdate()
     {
         // perform stuff here
-        if (!isTackling)
+        if (!isTackling && !isPushedBack)
         {
             if (canMove)
             {
@@ -104,6 +107,7 @@ public class PlayerLogic : MonoBehaviour
     void SetTackleFalse()
     {
         isTackling = false;
+        isPushedBack = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -111,15 +115,17 @@ public class PlayerLogic : MonoBehaviour
         Transform collider = collision.collider.transform;
         if (collider.tag == "Interactable")
         {
-            if (isTackling)
+            if (isTackling && !isPushedBack)
             {
+                isPushedBack = true;
                 Invoke("SetTackleFalse", .5f);
                 collider.gameObject.GetComponent<Interactable>().DestroyInteractable();
 
                 GM.ShakeCam();
                 Vector2 posDelta = transform.position - collider.transform.position;
                 posDelta.Normalize();
-                rb2D.AddForce(-moveDirection * 10f, ForceMode2D.Impulse);
+                rb2D.AddForce(-pushBackDirection * 15f, ForceMode2D.Impulse);
+                
 
                 // -------------------THIS CODE MOVED TO INTERACTABLES CLASS--------------------
                 //Stop tackle animation and/or start tackle hit animation
@@ -173,6 +179,8 @@ public class PlayerLogic : MonoBehaviour
         isTackling = true;
         canTackle = false;
 
+        pushBackDirection = moveDirection;
+
         Sequence tackleDisabled = DOTween.Sequence();
         tackleDisabled.SetId("TackleDisabled");
 
@@ -204,78 +212,113 @@ public class PlayerLogic : MonoBehaviour
 
     private void CheckMovement()
     {
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-        {
-            moveDirection = Vector3.up;
-            canMove = true;
-        }
-        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-        {
-            moveDirection = Vector3.down;
-            canMove = true;
+        float horizValue = Input.GetAxisRaw("Horizontal");
+        float vertValue = Input.GetAxisRaw("Vertical");
+        
+        
+        moveDirection = new Vector2(horizValue, vertValue).normalized;
+        canMove = true;
+
+
+        // if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        // {
+        //     moveDirection = Vector3.up;
+        //     canMove = true;
+        // }
+        // else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        // {
+        //     moveDirection = Vector3.down;
+        //     canMove = true;
             
-        }
-        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        {
-            moveDirection = Vector3.left;
-            canMove = true;
+        // }
+        // else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        // {
+        //     moveDirection = Vector3.left;
+        //     canMove = true;
             
-        }
-        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            moveDirection = Vector3.right;
-            canMove = true;
+        // }
+        // else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        // {
+        //     moveDirection = Vector3.right;
+        //     canMove = true;
             
-        }
-        else
-        {
-            moveDirection = Vector3.zero;
-            canMove = true;
-        }
+        // }
+        // else
+        // {
+        //     moveDirection = Vector3.zero;
+        //     canMove = true;
+        // }
     }
 
 
     private void MovePlayer(Vector3 moveDirection)
     {
-        if (moveDirection == Vector3.up)
+        if (moveDirection.x > 0 && moveDirection.y >= -1)
         {
-            //playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Back", typeof(Sprite));
-
-            playerAnimator.Play("kid back anim");
-
-            playerSpriteRenderer.flipX = false;
-            //playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite back_0") as RuntimeAnimatorController;
-        }
-        else if (moveDirection == Vector3.down)
-        {
-            //playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Front", typeof(Sprite));
-
-            playerAnimator.Play("kid front anim");
-
-
-            playerSpriteRenderer.flipX = false;
-            //playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite front_0") as RuntimeAnimatorController;
-        }
-        else if (moveDirection == Vector3.left)
-        {
-           //playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Left", typeof(Sprite));
-
-            playerAnimator.Play("kid side anim");
-            playerSpriteRenderer.flipX = false;
-            //playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite side_0") as RuntimeAnimatorController;
-        }
-        else if(moveDirection == Vector3.right)
-        {
-            //playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Left", typeof(Sprite));
+            // Diagonally top right or bottom right
             playerAnimator.Play("kid side anim");
             playerSpriteRenderer.flipX = true;
-            //playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite side_0") as RuntimeAnimatorController;
+        }
+        else if (moveDirection.x < 0  && moveDirection.y >= -1)
+        {
+            // Diagonally top left or bottom left
+            playerAnimator.Play("kid side anim");
+            playerSpriteRenderer.flipX = false;
+        }
+        else if (moveDirection.y > 0 && moveDirection.x == 0)
+        {
+            playerAnimator.Play("kid back anim");
+            playerSpriteRenderer.flipX = false;
+        }
+        else if (moveDirection.y < 0 && moveDirection.x == 0)
+        {
+            playerAnimator.Play("kid front anim");
+            playerSpriteRenderer.flipX = false;
         }
         else
         {
             playerAnimator.Play("kid idle anim");
-            //do nothing
         }
+
+
+        // if (moveDirection == Vector3.up)
+        // {
+        //     //playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Back", typeof(Sprite));
+
+        //     playerAnimator.Play("kid back anim");
+        //     playerSpriteRenderer.flipX = false;
+        //     //playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite back_0") as RuntimeAnimatorController;
+        // }
+        // else if (moveDirection == Vector3.down)
+        // {
+        //     //playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Front", typeof(Sprite));
+
+        //     playerAnimator.Play("kid front anim");
+
+
+        //     playerSpriteRenderer.flipX = false;
+        //     //playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite front_0") as RuntimeAnimatorController;
+        // }
+        // else if (moveDirection == Vector3.left)
+        // {
+        //    //playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Left", typeof(Sprite));
+
+        //     playerAnimator.Play("kid side anim");
+        //     playerSpriteRenderer.flipX = false;
+        //     //playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite side_0") as RuntimeAnimatorController;
+        // }
+        // else if(moveDirection == Vector3.right)
+        // {
+        //     //playerSprite = (Sprite)Resources.Load("Player Sprites/PlayerStand_Left", typeof(Sprite));
+        //     playerAnimator.Play("kid side anim");
+        //     playerSpriteRenderer.flipX = true;
+        //     //playerAnimator.runtimeAnimatorController = Resources.Load("Prefabs/Animations/kid sprite side_0") as RuntimeAnimatorController;
+        // }
+        // else
+        // {
+        //     playerAnimator.Play("kid idle anim");
+        //     //do nothing
+        // }
 
         playerSpriteRenderer.sprite = playerSprite;
         Vector3 newPosition = transform.position;
