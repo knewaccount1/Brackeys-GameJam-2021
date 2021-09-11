@@ -124,7 +124,7 @@ public class PlayerLogic : MonoBehaviour
                 GM.ShakeCam();
                 Vector2 posDelta = transform.position - collider.transform.position;
                 posDelta.Normalize();
-                rb2D.AddForce(-pushBackDirection * 15f, ForceMode2D.Impulse);
+                rb2D.AddForce(-pushBackDirection * 12f, ForceMode2D.Impulse);
                 
 
                 // -------------------THIS CODE MOVED TO INTERACTABLES CLASS--------------------
